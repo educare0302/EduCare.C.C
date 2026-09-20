@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WBTET CDP Mock Test | EduCare C.C.</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(135deg,#07152f,#102b55,#07152f);
+    color:#fff;
+    min-height:100vh;
+}
+
+.container{
+    max-width:720px;
+    margin:auto;
+    padding:18px;
+}
+
+.header{
+    text-align:center;
+    padding:20px 10px;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#00eaff;
+}
+
+.subtitle{
+    margin-top:6px;
+    color:#dce7ff;
+    font-size:15px;
+}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin:15px 0;
+}
+
+.info-box{
+    flex:1;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:12px;
+    padding:12px;
+    text-align:center;
+}
+
+.info-title{
+    font-size:12px;
+    color:#b9c8e8;
+}
+
+.info-value{
+    font-size:18px;
+    font-weight:bold;
+    margin-top:4px;
+}
+
+.progress{
+    width:100%;
+    height:8px;
+    background:#263a5e;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#00eaff;
+    transition:.3s;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
+}
+
+.question{
+    font-size:19px;
+    line-height:1.5;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.option{
+    width:100%;
+    text-align:left;
+    padding:15px;
+    margin:9px 0;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.06);
+    color:#fff;
+    font-size:15px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:rgba(0,234,255,.12);
+    border-color:#00eaff;
+}
+
+.option.selected{
+    background:#00eaff;
+    color:#001827;
+    border-color:#00eaff;
+    font-weight:bold;
+}
+
+.buttons{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:20px;
+}
+
+.btn{
+    flex:1;
+    border:none;
+    border-radius:12px;
+    padding:14px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.prev{
+    background:#33496f;
+    color:#fff;
+}
+
+.next{
+    background:#00eaff;
+    color:#001827;
+}
+
+.result{
+    text-align:center;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:18px;
+    padding:25px;
+}
+
+.score{
+    font-size:48px;
+    font-weight:bold;
+    color:#00eaff;
+    margin:15px 0;
+}
+
+.review{
+    margin-top:20px;
+    text-align:left;
+}
+
+.review-item{
+    background:rgba(255,255,255,.06);
+    border-radius:12px;
+    padding:15px;
+    margin:12px 0;
+}
+
+.correct{
+    color:#54f58a;
+    font-weight:bold;
+}
+
+.wrong{
+    color:#ff7777;
+    font-weight:bold;
+}
+
+.explanation{
+    color:#d9e4fa;
+    margin-top:8px;
+    line-height:1.5;
+}
+
+.restart{
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#00eaff;
+    color:#001827;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.footer{
+    text-align:center;
+    padding:25px 5px;
+    color:#aebbd3;
+    font-size:13px;
+}
+
+@media(max-width:500px){
+    .container{padding:12px}
+    .question{font-size:17px}
+    .option{font-size:14px;padding:13px}
+    .logo{font-size:25px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+    <div class="logo">EduCare C.C.</div>
+    <div class="subtitle">WBTET CDP MOCK TEST 2026</div>
+    <div class="subtitle">Child Development & Pedagogy</div>
+</div>
+
+<div id="quizScreen">
+
+<div class="info">
+    <div class="info-box">
+        <div class="info-title">QUESTION</div>
+        <div class="info-value" id="questionNumber">1 / 20</div>
+    </div>
+
+    <div class="info-box">
+        <div class="info-title">TIME LEFT</div>
+        <div class="info-value" id="timer">30:00</div>
+    </div>
+</div>
+
+<div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div class="card">
+
+<div class="question" id="questionText"></div>
+
+<div id="options"></div>
+
+<div class="buttons">
+    <button class="btn prev" id="prevBtn" onclick="previousQuestion()">
+        Previous
+    </button>
+
+    <button class="btn next" id="nextBtn" onclick="nextQuestion()">
+        Next
+    </button>
+</div>
+
+</div>
+</div>
+
+<div id="resultScreen" style="display:none;"></div>
+
+<div class="footer">
+    © EduCare Coaching Centre (EduCare C.C.)<br>
+    WBTET • CTET • TET • CDP Practice
+</div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"According to Piaget, conservation of quantity is generally associated with which stage?",
+options:[
+"Sensorimotor stage",
+"Preoperational stage",
+"Concrete operational stage",
+"Formal operational stage"
+],
+answer:2,
+explanation:"Conservation develops during the concrete operational stage when children begin using logical operations with concrete situations."
+},
+
+{
+q:"Vygotsky's Zone of Proximal Development refers to tasks a learner can perform:",
+options:[
+"Only independently",
+"With appropriate guidance but not yet independently",
+"Only after a formal examination",
+"Without social interaction"
+],
+answer:1,
+explanation:"The Zone of Proximal Development describes what a learner can accomplish with suitable guidance or support."
+},
+
+{
+q:"Learning that is strengthened when a desirable consequence follows a behaviour is called:",
+options:[
+"Positive reinforcement",
+"Punishment",
+"Extinction",
+"Classical conditioning"
+],
+answer:0,
+explanation:"Positive reinforcement involves presenting a desirable consequence to increase the likelihood of a behaviour."
+},
+
+{
+q:"Which approach places learners' needs, experiences and active participation at the centre of teaching?",
+options:[
+"Teacher-centred instruction",
+"Child-centred education",
+"Rote instruction",
+"Lecture-only teaching"
+],
+answer:1,
+explanation:"Child-centred education gives importance to learners' needs, experiences, interests and active participation."
+},
+
+{
+q:"Which assessment is mainly used during instruction to improve ongoing learning?",
+options:[
+"Summative assessment",
+"Formative assessment",
+"Selection assessment",
+"Certification assessment"
+],
+answer:1,
+explanation:"Formative assessment provides information during instruction that can be used to improve teaching and learning."
+},
+
+{
+q:"A learner studies a topic because she enjoys learning about it, without expecting a reward. This is:",
+options:[
+"Extrinsic motivation",
+"Intrinsic motivation",
+"Punishment",
+"External regulation"
+],
+answer:1,
+explanation:"Intrinsic motivation comes from interest, enjoyment or satisfaction in the activity itself."
+},
+
+{
+q:"Which intelligence in Gardner's theory is especially related to understanding other people?",
+options:[
+"Linguistic intelligence",
+"Interpersonal intelligence",
+"Musical intelligence",
+"Naturalistic intelligence"
+],
+answer:1,
+explanation:"Interpersonal intelligence involves understanding and interacting effectively with other people."
+},
+
+{
+q:"Which classroom practice best supports inclusive education?",
+options:[
+"Using one method for every learner",
+"Providing appropriate adaptations and support",
+"Separating learners with difficulties",
+"Lowering expectations for all learners"
+],
+answer:1,
+explanation:"Inclusive education involves providing suitable adaptations, strategies and support so diverse learners can participate."
+},
+
+{
+q:"A child attributes human feelings to a toy. Piaget called this:",
+options:[
+"Conservation",
+"Animism",
+"Reversibility",
+"Seriation"
+],
+answer:1,
+explanation:"Animism refers to attributing life-like or human qualities to non-living objects."
+},
+
+{
+q:"In Piaget's theory, egocentrism refers mainly to difficulty in:",
+options:[
+"Remembering facts",
+"Taking another person's perspective",
+"Counting objects",
+"Following instructions"
+],
+answer:1,
+explanation:"Egocentrism involves difficulty in viewing a situation from another person's perspective."
+},
+
+{
+q:"Scaffolding is best described as:",
+options:[
+"Permanent teacher dependence",
+"Temporary support gradually reduced as competence grows",
+"Punishment for errors",
+"Avoiding difficult tasks"
+],
+answer:1,
+explanation:"Scaffolding provides temporary assistance that can gradually be withdrawn as the learner becomes more independent."
+},
+
+{
+q:"Which statement about child development is most appropriate?",
+options:[
+"All children develop at exactly the same rate",
+"Development involves broad patterns with individual differences",
+"Development depends only on heredity",
+"Environment has no influence"
+],
+answer:1,
+explanation:"Children follow broad developmental patterns but can differ in their pace, abilities and individual characteristics."
+},
+
+{
+q:"A teacher asks students to explain how they reached an answer. This mainly helps identify their:",
+options:[
+"Attendance",
+"Reasoning process",
+"Physical growth",
+"Handwriting speed"
+],
+answer:1,
+explanation:"Explaining reasoning provides insight into how learners think and how they arrive at conclusions."
+},
+
+{
+q:"Which is an example of cooperative learning?",
+options:[
+"Students silently memorise alone",
+"Students work together with shared responsibility",
+"Teacher lectures throughout the period",
+"Students compete individually only"
+],
+answer:1,
+explanation:"Cooperative learning involves learners working together through interaction and shared responsibility."
+},
+
+{
+q:"Which cognitive process goes beyond simple recall and involves analysing and evaluating ideas?",
+options:[
+"Higher-order thinking",
+"Mechanical repetition",
+"Simple recognition",
+"Rote copying"
+],
+answer:0,
+explanation:"Higher-order thinking includes cognitive processes such as analysis, evaluation and reasoning beyond simple recall."
+},
+
+{
+q:"A learner makes an error while solving a problem. A constructivist teacher should first:",
+options:[
+"Punish the learner",
+"Explore the learner's reasoning",
+"Give the answer immediately",
+"Stop the activity"
+],
+answer:1,
+explanation:"Exploring the learner's reasoning helps the teacher identify existing ideas and possible misconceptions."
+},
+
+{
+q:"Which statement best describes individual differences among learners?",
+options:[
+"Learners are identical in ability and pace",
+"Learners can differ in abilities, interests and learning pace",
+"Only age determines learning",
+"Differences should always be ignored"
+],
+answer:1,
+explanation:"Learners differ in abilities, interests, experiences, learning styles and pace of development."
+},
+
+{
+q:"According to social learning theory, children can learn by:",
+options:[
+"Observation and imitation",
+"Only direct punishment",
+"Only biological maturation",
+"Avoiding all social interaction"
+],
+answer:0,
+explanation:"Social learning theory highlights learning through observation, imitation and modelling."
+},
+
+{
+q:"A teacher gives useful feedback after a learner attempts a task and encourages another attempt. This primarily supports:",
+options:[
+"Learning and improvement",
+"Permanent ranking",
+"Exclusion",
+"Avoidance of practice"
+],
+answer:0,
+explanation:"Constructive feedback helps learners understand their performance and improve subsequent attempts."
+},
+
+{
+q:"Which principle is most appropriate for effective primary teaching?",
+options:[
+"Use only lecture and memorisation",
+"Connect learning with learners' experiences and active participation",
+"Avoid questions from learners",
+"Treat every learner exactly the same regardless of need"
+],
+answer:1,
+explanation:"Connecting learning with learners' experiences and active participation supports meaningful learning."
+}
+
+];
+
+let currentQuestion = 0;
+let userAnswers = new Array(questions.length).fill(null);
+let timeLeft = 30 * 60;
+let timerInterval;
+
+const questionText = document.getElementById("questionText");
+const optionsBox = document.getElementById("options");
+const questionNumber = document.getElementById("questionNumber");
+const progressBar = document.getElementById("progressBar");
+const timer = document.getElementById("timer");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+function showQuestion(){
+
+    const q = questions[currentQuestion];
+
+    questionText.innerHTML =
+        (currentQuestion + 1) + ". " + q.q;
+
+    questionNumber.innerHTML =
+        (currentQuestion + 1) + " / " + questions.length;
+
+    progressBar.style.width =
+        ((currentQuestion + 1) / questions.length * 100) + "%";
+
+    optionsBox.innerHTML = "";
+
+    q.options.forEach((option,index)=>{
+
+        const button = document.createElement("button");
+
+        button.className = "option";
+
+        button.innerHTML =
+            String.fromCharCode(65 + index) + ". " + option;
+
+        if(userAnswers[currentQuestion] === index){
+            button.classList.add("selected");
+        }
+
+        button.onclick = function(){
+
+            userAnswers[currentQuestion] = index;
+
+            showQuestion();
+
+        };
+
+        optionsBox.appendChild(button);
+
+    });
+
+    prevBtn.disabled = currentQuestion === 0;
+
+    if(currentQuestion === questions.length - 1){
+        nextBtn.innerHTML = "Submit Test";
+    }else{
+        nextBtn.innerHTML = "Next";
+    }
+}
+
+function nextQuestion(){
+
+    if(currentQuestion < questions.length - 1){
+
+        currentQuestion++;
+
+        showQuestion();
+
+    }else{
+
+        submitTest();
+
+    }
+}
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        showQuestion();
+
+    }
+
+}
+
+function updateTimer(){
+
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+
+    timer.innerHTML =
+        String(minutes).padStart(2,"0") + ":" +
+        String(seconds).padStart(2,"0");
+
+    if(timeLeft <= 0){
+
+        clearInterval(timerInterval);
+
+        submitTest();
+
+        return;
+
+    }
+
+    timeLeft--;
+
+}
+
+function submitTest(){
+
+    clearInterval(timerInterval);
+
+    let score = 0;
+
+    questions.forEach((q,index)=>{
+
+        if(userAnswers[index] === q.answer){
+            score++;
+        }
+
+    });
+
+    const percentage =
+        Math.round((score / questions.length) * 100);
+
+    let reviewHTML = "";
+
+    questions.forEach((q,index)=>{
+
+        const selected = userAnswers[index];
+
+        const isCorrect = selected === q.answer;
+
+        reviewHTML += `
+        <div class="review-item">
+
+            <strong>Q${index+1}. ${q.q}</strong>
+
+            <div class="${isCorrect ? 'correct' : 'wrong'}">
+                ${selected === null
+                    ? "Not Answered"
+                    : "Your Answer: " + q.options[selected]}
+            </div>
+
+            <div class="correct">
+                Correct Answer: ${q.options[q.answer]}
+            </div>
+
+            <div class="explanation">
+                <strong>Explanation:</strong>
+                ${q.explanation}
+            </div>
+
+        </div>
+        `;
+
+    });
+
+    document.getElementById("quizScreen").style.display = "none";
+
+    const resultScreen = document.getElementById("resultScreen");
+
+    resultScreen.style.display = "block";
+
+    resultScreen.innerHTML = `
+
+    <div class="result">
+
+        <h2>🎉 Test Completed!</h2>
+
+        <div class="score">
+            ${score} / ${questions.length}
+        </div>
+
+        <h3>Percentage: ${percentage}%</h3>
+
+        <p>
+            Thank you for attempting the
+            <strong>WBTET CDP Mock Test</strong>.
+        </p>
+
+        <div class="review">
+            <h3>Answer Review</h3>
+            ${reviewHTML}
+        </div>
+
+        <button class="restart" onclick="restartTest()">
+            Restart Test
+        </button>
+
+    </div>
+
+    `;
+
+    window.scrollTo(0,0);
+
+}
+
+function restartTest(){
+
+    currentQuestion = 0;
+
+    userAnswers = new Array(questions.length).fill(null);
+
+    timeLeft = 30 * 60;
+
+    document.getElementById("quizScreen").style.display = "block";
+
+    document.getElementById("resultScreen").style.display = "none";
+
+    clearInterval(timerInterval);
+
+    timerInterval = setInterval(updateTimer,1000);
+
+    showQuestion();
+
+    window.scrollTo(0,0);
+
+}
+
+showQuestion();
+
+timerInterval = setInterval(updateTimer,1000);
+
+</script>
+
+</body>
+</html>
