@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mock Tests | EduCare C.C.</title>
+<title>WBTET Mock Tests 2026 | EduCare C.C.</title>
 
 <style>
+
 *{
 box-sizing:border-box;
 margin:0;
@@ -22,10 +23,11 @@ line-height:1.6;
 }
 
 /* HEADER */
+
 header{
 background:linear-gradient(135deg,#061b4f,#064c9b,#00a9d9);
 color:white;
-padding:25px 15px;
+padding:30px 15px;
 text-align:center;
 }
 
@@ -40,6 +42,7 @@ font-size:14px;
 }
 
 /* NAVIGATION */
+
 nav{
 background:#041535;
 padding:10px 8px;
@@ -67,6 +70,7 @@ background:#00a9d9;
 }
 
 /* CONTAINER */
+
 .container{
 max-width:950px;
 margin:25px auto;
@@ -74,156 +78,162 @@ padding:0 15px;
 }
 
 /* BACK */
+
 .back{
 display:inline-block;
-margin-bottom:20px;
+margin-bottom:18px;
 color:#064c9b;
 text-decoration:none;
 font-weight:bold;
+}
+
+/* MAIN BOX */
+
+.exam-box{
+background:linear-gradient(135deg,#061b4f,#064c9b,#087fc1);
+color:white;
+padding:22px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,80,160,.25);
 }
 
 /* TITLE */
-.title{
+
+.exam-box h1{
 text-align:center;
-color:#064c9b;
-margin-bottom:10px;
 font-size:28px;
-}
-
-.subtitle{
-text-align:center;
-color:#666;
-margin-bottom:25px;
-}
-
-/* HERO */
-.hero{
-background:linear-gradient(135deg,#ffffff,#e8f7ff);
-border-radius:20px;
-padding:25px;
-margin-bottom:25px;
-text-align:center;
-box-shadow:0 5px 18px rgba(0,0,0,.08);
-}
-
-.hero h2{
-color:#064c9b;
 margin-bottom:8px;
 }
 
-.hero p{
-color:#555;
+.exam-box .intro{
+text-align:center;
+font-size:15px;
+margin-bottom:22px;
 }
 
-/* GRID */
-.grid{
+/* SUBJECT GRID */
+
+.subject-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:18px;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
 }
 
-/* CARD */
-.card{
-background:white;
-border-radius:18px;
-padding:22px;
+/* SUBJECT CARD */
+
+.subject{
+background:#ffffff;
+color:#172033;
+border-radius:15px;
+padding:22px 12px;
 text-align:center;
-box-shadow:0 5px 18px rgba(0,0,0,.08);
-transition:.25s;
+min-height:135px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+box-shadow:0 4px 12px rgba(0,0,0,.12);
+transition:.2s;
 }
 
-.card:hover{
+.subject:hover{
 transform:translateY(-4px);
-box-shadow:0 8px 22px rgba(0,0,0,.13);
 }
 
-.card-icon{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.card h3{
+.subject h3{
 color:#064c9b;
+font-size:18px;
 margin-bottom:8px;
-font-size:20px;
 }
 
-.card p{
-color:#666;
-font-size:14px;
-margin-bottom:15px;
+.subject p{
+font-size:12px;
+color:#687386;
+margin-bottom:12px;
 }
 
 /* BUTTON */
-.btn{
+
+.start-btn{
 display:inline-block;
-background:linear-gradient(135deg,#0077ff,#00a9d9);
+background:linear-gradient(135deg,#00a9d9,#008fd0);
 color:white;
 text-decoration:none;
-padding:10px 16px;
-border-radius:22px;
-font-size:14px;
-font-weight:bold;
-box-shadow:0 4px 12px rgba(0,119,255,.2);
-}
-
-.btn:hover{
-background:#064c9b;
-}
-
-/* COMING */
-.coming{
-display:inline-block;
-background:#eef2f7;
-color:#777;
-padding:7px 14px;
+padding:8px 15px;
 border-radius:20px;
-font-size:13px;
+font-size:12px;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,150,220,.25);
+}
+
+.start-btn:hover{
+transform:translateY(-2px);
+}
+
+/* COMING SOON */
+
+.coming{
+background:#eef2f7;
+color:#697386;
+padding:6px 12px;
+border-radius:20px;
+font-size:11px;
 font-weight:bold;
 }
 
 /* FOOTER */
+
 footer{
-margin-top:35px;
-background:#061b4f;
-color:white;
 text-align:center;
+margin-top:30px;
 padding:20px;
-font-size:13px;
+font-size:12px;
+color:#687386;
 }
 
 /* MOBILE */
-@media(max-width:600px){
 
-.title{
-font-size:24px;
+@media(max-width:700px){
+
+.subject-grid{
+grid-template-columns:repeat(2,1fr);
 }
 
-.hero{
-padding:20px 15px;
+.exam-box h1{
+font-size:23px;
 }
 
-.grid{
-grid-template-columns:1fr;
-}
-
-nav a{
-font-size:13px;
-padding:8px 10px;
+.subject{
+min-height:125px;
 }
 
 }
+
+@media(max-width:430px){
+
+.subject-grid{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.subject{
+padding:18px 8px;
+}
+
+.subject h3{
+font-size:16px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
 
-<div class="logo">
-🎓 EduCare C.C.
-</div>
+<div class="logo">EduCare C.C.</div>
 
 <div class="tagline">
 WBTET • CTET • TET • Teacher Preparation
@@ -231,17 +241,15 @@ WBTET • CTET • TET • Teacher Preparation
 
 </header>
 
-
-<!-- NAVIGATION -->
 <nav>
 
 <a href="../index.html">🏠 Home</a>
 
-<a href="../index.html#wbtet">🟦 WBTET</a>
+<a href="../index.html#wbtet">WBTET</a>
 
-<a href="../index.html#ctet">🟩 CTET</a>
+<a href="../index.html#ctet">CTET</a>
 
-<a href="../index.html#other-tet">📚 Other TET</a>
+<a href="../index.html#other-tet">Other TET</a>
 
 <a href="../index.html#mock-tests">🎯 Mock Tests</a>
 
@@ -249,188 +257,102 @@ WBTET • CTET • TET • Teacher Preparation
 
 </nav>
 
-
 <div class="container">
 
 <a class="back" href="../index.html">
 ← Back to EduCare C.C.
 </a>
 
+<div class="exam-box">
 
-<h1 class="title">
-🎯 Mock Tests
-</h1>
+<h1>📝 WBTET Mock Tests 2026</h1>
 
-<p class="subtitle">
-Exam-Oriented Online Mock Tests for WBTET, CTET & Other TET Exams
+<p class="intro">
+Practice subject-wise WBTET questions with instant results.
 </p>
 
+<div class="subject-grid">
 
-<!-- HERO -->
-<div class="hero">
+<!-- CDP -->
 
-<h2>📝 Online Mock Test Centre</h2>
+<div class="subject">
 
-<p>
-Practice with exam-oriented mock tests, improve your preparation
-and check your performance instantly.
-</p>
+<h3>🧠 CDP</h3>
 
-</div>
+<p>Child Development & Pedagogy</p>
 
-
-<!-- MOCK TEST CARDS -->
-<div class="grid">
-
-
-<!-- WBTET CDP -->
-<div class="card">
-
-<div class="card-icon">📝</div>
-
-<h3>
-WBTET CDP Mock Test 2026
-</h3>
-
-<p>
-Child Development & Pedagogy
-<br>
-20 Questions • 30 Minutes
-</p>
-
-<a class="btn"
+<a class="start-btn"
 href="../wbtet-cdp/"
 target="_blank">
-
-🎯 Start Test
-
+START TEST
 </a>
 
 </div>
 
 
-<!-- WBTET CDP TEST 2 -->
-<div class="card">
+<!-- EVS -->
 
-<div class="card-icon">📚</div>
+<div class="subject">
 
-<h3>
-WBTET CDP Mock Test – 2
-</h3>
+<h3>🌿 EVS</h3>
 
-<p>
-Child Development & Pedagogy
-<br>
-Practice Test – Coming Soon
-</p>
+<p>Environmental Studies</p>
 
-<span class="coming">
-Coming Soon
-</span>
+<span class="coming">Coming Soon</span>
 
 </div>
 
 
-<!-- WBTET FULL MOCK -->
-<div class="card">
+<!-- MATHEMATICS -->
 
-<div class="card-icon">🏆</div>
+<div class="subject">
 
-<h3>
-WBTET Full Mock Test
-</h3>
+<h3>➗ Mathematics</h3>
 
-<p>
-CDP • Language • Mathematics • EVS
-<br>
-Complete Practice Test
-</p>
+<p>Mathematics Practice Test</p>
 
-<span class="coming">
-Coming Soon
-</span>
+<span class="coming">Coming Soon</span>
 
 </div>
 
 
-<!-- CTET CDP -->
-<div class="card">
+<!-- ENGLISH -->
 
-<div class="card-icon">🎓</div>
+<div class="subject">
 
-<h3>
-CTET CDP Mock Test
-</h3>
+<h3>📖 English</h3>
 
-<p>
-Child Development & Pedagogy
-<br>
-CTET Practice Questions
-</p>
+<p>English Practice Test</p>
 
-<span class="coming">
-Coming Soon
-</span>
+<span class="coming">Coming Soon</span>
 
 </div>
 
 
-<!-- CTET FULL MOCK -->
-<div class="card">
+<!-- LANGUAGE -->
 
-<div class="card-icon">📖</div>
+<div class="subject">
 
-<h3>
-CTET Full Mock Test
-</h3>
+<h3>🔤 Language</h3>
 
-<p>
-Complete CTET Exam Practice
-<br>
-Paper-wise Mock Tests
-</p>
+<p>Language Practice Test</p>
 
-<span class="coming">
-Coming Soon
-</span>
-
-</div>
-
-
-<!-- OTHER TET -->
-<div class="card">
-
-<div class="card-icon">🌐</div>
-
-<h3>
-Other TET Mock Tests
-</h3>
-
-<p>
-Practice tests for different
-Teacher Eligibility Tests.
-</p>
-
-<span class="coming">
-Coming Soon
-</span>
-
-</div>
-
+<span class="coming">Coming Soon</span>
 
 </div>
 
 </div>
 
+</div>
 
-<!-- FOOTER -->
+</div>
+
 <footer>
 
-© EduCare Coaching Centre (EduCare C.C.)<br><br>
-
+© EduCare Coaching Centre (EduCare C.C.)<br>
 WBTET • CTET • TET • CDP Practice
 
 </footer>
 
 </body>
-  </html>
+</html>
