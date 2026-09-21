@@ -3,145 +3,658 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EduCare Coaching Centre (EduCare C.C)</title>
+
+<title>EduCare Coaching Centre | WBTET CTET TET Preparation</title>
 
 <style>
-body{
-font-family: Arial, sans-serif;
+
+*{
+box-sizing:border-box;
 margin:0;
 padding:0;
-background:#f5f7fa;
-color:#333;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial, sans-serif;
+background:#f4f8ff;
+color:#172033;
+line-height:1.6;
 }
 
 header{
-background:#0d47a1;
+background:linear-gradient(135deg,#061b4f,#064c9b,#00a9d9);
 color:white;
+padding:35px 18px;
 text-align:center;
-padding:30px;
 }
 
-header h1{
-margin:0;
-font-size:32px;
+.logo{
+font-size:30px;
+font-weight:bold;
+letter-spacing:.5px;
+}
+
+.tagline{
+margin-top:7px;
+font-size:15px;
+opacity:.95;
+}
+
+nav{
+background:#041535;
+padding:12px 8px;
+display:flex;
+justify-content:center;
+gap:8px;
+flex-wrap:wrap;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 15px rgba(0,0,0,.2);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:9px 13px;
+border-radius:20px;
+font-size:14px;
+font-weight:bold;
+}
+
+nav a:hover{
+background:#00a9d9;
 }
 
 .hero{
-padding:30px;
+margin:18px;
+padding:35px 20px;
+border-radius:22px;
 text-align:center;
-background:white;
+background:linear-gradient(135deg,#ffffff,#e9f7ff);
+box-shadow:0 8px 30px rgba(0,80,160,.12);
+border:1px solid #d7ecff;
+}
+
+.hero h1{
+font-size:30px;
+color:#063d88;
 }
 
 .hero h2{
-color:#0d47a1;
+margin-top:8px;
+color:#00a0cf;
+font-size:21px;
+}
+
+.hero p{
+margin:12px auto;
+max-width:650px;
+color:#536174;
 }
 
 .btn{
 display:inline-block;
-margin:10px;
-padding:12px 25px;
-background:#0d47a1;
+margin:7px 4px;
+padding:12px 20px;
+border-radius:25px;
+background:linear-gradient(135deg,#006ee6,#00a9d9);
 color:white;
 text-decoration:none;
-border-radius:8px;
 font-weight:bold;
+box-shadow:0 5px 15px rgba(0,120,220,.25);
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.container{
+max-width:1050px;
+margin:auto;
+padding:5px 15px 30px;
 }
 
 .section{
+margin:20px 0;
+padding:25px 18px;
 background:white;
-margin:15px;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 8px rgba(0,0,0,0.1);
+border-radius:20px;
+box-shadow:0 5px 25px rgba(0,50,120,.08);
 }
 
-.section h3{
-color:#0d47a1;
+.section-title{
+text-align:center;
+color:#063d88;
+font-size:25px;
+margin-bottom:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:15px;
+}
+
+.card{
+background:linear-gradient(145deg,#ffffff,#eef8ff);
+border:1px solid #d8edff;
+border-radius:18px;
+padding:20px 15px;
+text-align:center;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 8px 22px rgba(0,90,170,.15);
+}
+
+.card-icon{
+font-size:35px;
+}
+
+.card h3{
+margin:8px 0;
+color:#064b96;
+}
+
+.card p{
+font-size:14px;
+color:#637083;
+margin-bottom:10px;
+}
+
+.exam-box{
+background:linear-gradient(135deg,#061b4f,#075ca8);
+color:white;
+border-radius:20px;
+padding:25px 18px;
+margin-top:10px;
+text-align:center;
+}
+
+.exam-box h3{
+font-size:22px;
+margin-bottom:8px;
+}
+
+.subject{
+background:white;
+color:#172033;
+border-radius:15px;
+padding:15px 10px;
+margin-top:12px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:8px;
+}
+
+.subject-name{
+font-weight:bold;
+text-align:left;
+}
+
+.small-btn{
+display:inline-block;
+background:#00a5d8;
+color:white;
+padding:8px 12px;
+border-radius:18px;
+text-decoration:none;
+font-size:12px;
+font-weight:bold;
+}
+
+.coming{
+background:#eef2f7;
+color:#667085;
+padding:8px 12px;
+border-radius:18px;
+font-size:12px;
+font-weight:bold;
+}
+
+.update{
+padding:15px;
+margin:10px 0;
+border-left:5px solid #00a4d8;
+background:#f2f9ff;
+border-radius:10px;
+}
+
+.social{
+text-align:center;
 }
 
 footer{
-background:#0d47a1;
+background:#041535;
 color:white;
 text-align:center;
-padding:15px;
+padding:30px 15px;
 margin-top:20px;
 }
+
+footer p{
+margin:5px 0;
+font-size:14px;
+opacity:.9;
+}
+
+@media(max-width:600px){
+
+.logo{
+font-size:25px;
+}
+
+.hero h1{
+font-size:25px;
+}
+
+.hero h2{
+font-size:18px;
+}
+
+.section-title{
+font-size:22px;
+}
+
+nav{
+justify-content:flex-start;
+overflow-x:auto;
+flex-wrap:nowrap;
+}
+
+nav a{
+white-space:nowrap;
+}
+
+.subject{
+padding:13px 10px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>EduCare Coaching Centre</h1>
-<p>CTET • WBTET • STET • Pedagogy Notes • PYQs</p>
+
+<div class="logo">🎓 EduCare C.C.</div>
+
+<div class="tagline">
+WBTET • CTET • TET • Teacher Preparation
+</div>
+
 </header>
 
-<div class="hero">
-<h2>🚀 CTET SEPT 2026 New Batch Starting Soon</h2>
-<p>Join EduCare C.C for Complete CTET Preparation, PYQs, Notes, Mock Tests and Exam Updates.</p>
 
-<a class="btn" href="https://youtube.com/@educare.c.c?si=5P81KcVUdkOIwV4R" target="_blank">
-📺 YouTube Channel
-</a>
+<nav>
 
-<a class="btn" href="https://whatsapp.com/channel/0029VaACUz8JJhzdhRvTqH0i" target="_blank">
-📱 WhatsApp Channel
-</a>
-</div>
+<a href="#home">🏠 Home</a>
+<a href="#wbtet">WBTET</a>
+<a href="#ctet">CTET</a>
+<a href="#other-tet">Other TET</a>
+<a href="#mock-tests">🎯 Mock Tests</a>
+<a href="#updates">📢 Updates</a>
 
-<div class="section">
-<h3>📚 Free Study Materials</h3>
+</nav>
+
+
+<section class="hero" id="home">
+
+<h1>EduCare Coaching Centre</h1>
+
+<h2>WBTET • CTET • TET Preparation</h2>
+
+<p>
+Notes, Previous Year Questions, Mock Tests and Latest Teacher Recruitment & Exam Updates.
+</p>
+
+<a class="btn" href="#mock-tests">🎯 Start Mock Test</a>
+
+<a class="btn" href="#study-material">📚 Study Materials</a>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- STUDY MATERIAL -->
+
+<section class="section" id="study-material">
+
+<h2 class="section-title">📚 Free Study Materials</h2>
+
+<div class="grid">
+
 <div class="card">
-  <h3>📚 Free Study Materials</h3>
-
-  <p>
-    <a href="CTET_Notes.pdf" target="_blank">
-      📥 Download CTET Notes
-    </a>
-  </p>
-
-  <p>
-    <a href="WBTET_PYQ.pdf" target="_blank">
-      📥 Download WBTET PYQ
-    </a>
-  </p>
-
-  <p>
-    <a href="CDP_Questions.pdf" target="_blank">
-      📥 Download CDP Important Questions
-    </a>
-  </p>
+<div class="card-icon">📘</div>
+<h3>WBTET Notes</h3>
+<p>Important notes for West Bengal TET preparation.</p>
+<span class="coming">PDF Coming Soon</span>
 </div>
 
-<div class="section">
-<h3>📝 Previous Year Questions</h3>
-<p>CTET, WBTET, STET and Other Teaching Exam PYQs with Solutions.</p>
+<div class="card">
+<div class="card-icon">📕</div>
+<h3>WBTET PYQ</h3>
+<p>Previous Year Questions for WBTET practice.</p>
+<span class="coming">PDF Coming Soon</span>
 </div>
 
-<div class="section">
-<h3>🎯 Mock Tests</h3>
-<p>Practice with Exam-Oriented Mock Tests and Improve Your Score.</p>
+<div class="card">
+<div class="card-icon">📗</div>
+<h3>CTET Notes</h3>
+<p>Useful CTET preparation notes and concepts.</p>
+<span class="coming">PDF Coming Soon</span>
+</div>
 
-<a class="btn" href="wbtet-cdp/" target="_blank">
-📝 WBTET CDP Mock Test 2026 – Start Test
+<div class="card">
+<div class="card-icon">📙</div>
+<h3>CTET PYQ</h3>
+<p>Previous Year Questions for CTET preparation.</p>
+<span class="coming">PDF Coming Soon</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WBTET -->
+
+<section class="section" id="wbtet">
+
+<h2 class="section-title">📘 WBTET</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-icon">📚</div>
+<h3>WBTET Notes</h3>
+<p>Subject-wise study material.</p>
+<span class="coming">Coming Soon</span>
+</div>
+
+<div class="card">
+<div class="card-icon">📕</div>
+<h3>WBTET PYQ</h3>
+<p>Previous Year Questions.</p>
+<span class="coming">Coming Soon</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTET -->
+
+<section class="section" id="ctet">
+
+<h2 class="section-title">📗 CTET</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-icon">📚</div>
+<h3>CTET Notes</h3>
+<p>Complete CTET preparation resources.</p>
+<span class="coming">Coming Soon</span>
+</div>
+
+<div class="card">
+<div class="card-icon">📕</div>
+<h3>CTET PYQ</h3>
+<p>Previous Year Questions.</p>
+<span class="coming">Coming Soon</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- OTHER TET -->
+
+<section class="section" id="other-tet">
+
+<h2 class="section-title">📚 Other TET</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-icon">📝</div>
+<h3>Other State TET</h3>
+<p>Notes, PYQ and preparation resources.</p>
+<span class="coming">Coming Soon</span>
+</div>
+
+<div class="card">
+<div class="card-icon">🎯</div>
+<h3>Other TET Mock Tests</h3>
+<p>Practice tests for different TET exams.</p>
+<span class="coming">Coming Soon</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MOCK TESTS -->
+
+<section class="section" id="mock-tests">
+
+<h2 class="section-title">🎯 Mock Tests</h2>
+
+
+<div class="exam-box">
+
+<h3>📝 WBTET Mock Tests 2026</h3>
+
+<p>
+Practice subject-wise WBTET questions with instant results.
+</p>
+
+
+<div class="subject">
+
+<div class="subject-name">
+🧠 CDP<br>
+<small>Child Development & Pedagogy</small>
+</div>
+
+<a class="small-btn" href="wbtet-cdp/" target="_blank">
+START TEST
 </a>
 
 </div>
 
-<div class="section">
-<h3>📢 Latest Exam Updates</h3>
-<p>Get Daily Updates about CTET, WBTET, STET and Teacher Recruitment Exams.</p>
+
+<div class="subject">
+
+<div class="subject-name">
+🌿 EVS<br>
+<small>Environmental Studies</small>
 </div>
 
-<div class="section">
-<h3>📞 Contact Us</h3>
-<p>Email: educareccofficial@gmail.com</p>
-<p>Telegram Channel: Coming Soon</p>
+<span class="coming">Coming Soon</span>
+
 </div>
+
+
+<div class="subject">
+
+<div class="subject-name">
+➗ Mathematics
+</div>
+
+<span class="coming">Coming Soon</span>
+
+</div>
+
+
+<div class="subject">
+
+<div class="subject-name">
+📖 English
+</div>
+
+<span class="coming">Coming Soon</span>
+
+</div>
+
+
+<div class="subject">
+
+<div class="subject-name">
+🔤 Language
+</div>
+
+<span class="coming">Coming Soon</span>
+
+</div>
+
+</div>
+
+
+<br>
+
+
+<div class="exam-box">
+
+<h3>📗 CTET Mock Tests</h3>
+
+<p>
+Subject-wise CTET practice tests will be added here.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>🧠 CDP</h3>
+<span class="coming">Coming Soon</span>
+</div>
+
+<div class="card">
+<h3>🌿 EVS</h3>
+<span class="coming">Coming Soon</span>
+</div>
+
+<div class="card">
+<h3>➗ Mathematics</h3>
+<span class="coming">Coming Soon</span>
+</div>
+
+<div class="card">
+<h3>📖 English</h3>
+<span class="coming">Coming Soon</span>
+</div>
+
+<div class="card">
+<h3>🔤 Language</h3>
+<span class="coming">Coming Soon</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- UPDATES -->
+
+<section class="section" id="updates">
+
+<h2 class="section-title">📢 Latest Updates</h2>
+
+<div class="update">
+<strong>🔵 WBTET Updates</strong>
+<br>
+Latest WBTET exam and teacher-related updates.
+</div>
+
+<div class="update">
+<strong>🟢 CTET Updates</strong>
+<br>
+Latest CTET examination updates and notifications.
+</div>
+
+<div class="update">
+<strong>🟠 TET Updates</strong>
+<br>
+Important Teacher Eligibility Test updates.
+</div>
+
+<div class="update">
+<strong>🟣 West Bengal Teacher Updates</strong>
+<br>
+Important education department and teacher updates.
+</div>
+
+</section>
+
+
+<!-- YOUTUBE -->
+
+<section class="section social">
+
+<h2 class="section-title">▶️ EduCare Coaching Centre</h2>
+
+<p>
+Watch educational videos, exam updates, PYQ discussions and preparation guidance.
+</p>
+
+<a class="btn"
+href="https://youtube.com/@educare.c.c"
+target="_blank">
+▶️ Visit YouTube Channel
+</a>
+
+</section>
+
+
+<!-- WHATSAPP -->
+
+<section class="section social">
+
+<h2 class="section-title">📱 Join EduCare C.C.</h2>
+
+<p>
+Get important exam updates, study materials and notifications.
+</p>
+
+<a class="btn"
+href="https://whatsapp.com/channel/0029VaACUz8JJhzdhRvTqH0i"
+target="_blank">
+🟢 Join WhatsApp Channel
+</a>
+
+</section>
+
+
+</div>
+
 
 <footer>
-<p>© 2026 EduCare Coaching Centre (EduCare C.C)</p>
+
+<h3>🎓 EduCare Coaching Centre</h3>
+
+<p>WBTET • CTET • TET • Teacher Preparation</p>
+
+<p>Notes • PYQ • Mock Tests • Latest Updates</p>
+
+<p>© 2026 EduCare Coaching Centre</p>
+
 </footer>
 
+
 </body>
-</html>
+  </html>
