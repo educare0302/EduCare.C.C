@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>WBTET Previous Year Questions | EduCare C.C.</title>
 
 <style>
+
+/* RESET */
+
 *{
 box-sizing:border-box;
 margin:0;
 padding:0;
 }
+
+
+/* BODY */
 
 body{
 font-family:Arial,sans-serif;
@@ -20,37 +30,16 @@ color:#172033;
 line-height:1.6;
 }
 
+
+/* HEADER */
+
 header{
 background:linear-gradient(135deg,#061b4f,#064c9b,#00a9d9);
 color:white;
 padding:30px 15px;
 text-align:center;
 }
-nav{
-background:#041535;
-padding:12px 8px;
-display:flex;
-justify-content:center;
-gap:8px;
-flex-wrap:wrap;
-position:sticky;
-top:0;
-z-index:1000;
-box-shadow:0 3px 15px rgba(0,0,0,.2);
-}
 
-nav a{
-color:white;
-text-decoration:none;
-padding:9px 13px;
-border-radius:20px;
-font-size:14px;
-font-weight:bold;
-}
-
-nav a:hover{
-background:#00a9d9;
-  }
 .logo{
 font-size:28px;
 font-weight:bold;
@@ -61,222 +50,663 @@ margin-top:6px;
 font-size:14px;
 }
 
+
+/* NAVIGATION */
+
+nav{
+background:#041535;
+padding:12px 8px;
+
+display:flex;
+justify-content:center;
+
+gap:8px;
+flex-wrap:wrap;
+
+position:sticky;
+top:0;
+
+z-index:1000;
+
+box-shadow:0 3px 15px rgba(0,0,0,.2);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+
+padding:9px 13px;
+
+border-radius:20px;
+
+font-size:14px;
+font-weight:bold;
+}
+
+nav a:hover{
+background:#00a9d9;
+}
+
+
+/* MAIN CONTAINER */
+
 .container{
-max-width:900px;
+max-width:1000px;
+
 margin:25px auto;
+
 padding:0 15px;
 }
 
-.title{
-text-align:center;
-color:#064c9b;
-margin-bottom:10px;
-}
 
-.subtitle{
-text-align:center;
-color:#555;
-margin-bottom:25px;
-}
-
-.card{
-background:white;
-border-radius:18px;
-padding:22px;
-margin-bottom:18px;
-box-shadow:0 5px 18px rgba(0,0,0,.08);
-text-align:center;
-}
-
-.card h2{
-color:#064c9b;
-margin-bottom:8px;
-}
-
-.card p{
-color:#666;
-margin-bottom:15px;
-}
-
-.btn{
-display:inline-block;
-background:linear-gradient(135deg,#007bff,#00a9d9);
-color:white;
-text-decoration:none;
-padding:12px 18px;
-border-radius:12px;
-font-weight:bold;
-margin:5px;
-}
-
-.btn:hover{
-background:#064c9b;
-}
+/* BACK BUTTON */
 
 .back{
 display:inline-block;
+
 margin-bottom:20px;
+
 color:#064c9b;
+
 text-decoration:none;
+
 font-weight:bold;
 }
 
-footer{
-margin-top:30px;
-background:#061b4f;
-color:white;
+
+/* PAGE TITLE */
+
+.title{
 text-align:center;
+
+color:#064c9b;
+
+margin-bottom:8px;
+
+font-size:28px;
+}
+
+
+/* SUBTITLE */
+
+.subtitle{
+text-align:center;
+
+color:#555;
+
+margin-bottom:25px;
+
+font-size:14px;
+}
+
+
+/* BLUE GRADIENT PYQ BOX */
+
+.pyq-box{
+
+background:linear-gradient(
+135deg,
+#061b4f,
+#064c9b,
+#087fc1
+);
+
+padding:25px;
+
+border-radius:22px;
+
+box-shadow:
+0 8px 25px rgba(0,80,160,.25);
+}
+
+
+/* PYQ GRID */
+
+.pyq-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:16px;
+}
+
+
+/* PYQ CARD */
+
+.card{
+
+background:white;
+
+border-radius:18px;
+
+padding:22px 15px;
+
+min-height:190px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+box-shadow:
+0 5px 18px rgba(0,0,0,.12);
+
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+
+/* CARD HEADING */
+
+.card h2{
+
+color:#064c9b;
+
+font-size:19px;
+
+margin-bottom:8px;
+}
+
+
+/* CARD DESCRIPTION */
+
+.card p{
+
+color:#666;
+
+font-size:13px;
+
+margin-bottom:12px;
+}
+
+
+/* BUTTONS */
+
+.btn{
+
+display:inline-block;
+
+background:
+linear-gradient(
+135deg,
+#007bff,
+#00a9d9
+);
+
+color:white;
+
+text-decoration:none;
+
+padding:9px 13px;
+
+border-radius:12px;
+
+font-size:12px;
+
+font-weight:bold;
+
+margin:4px;
+
+box-shadow:
+0 4px 10px rgba(0,150,220,.20);
+}
+
+.btn:hover{
+
+background:#064c9b;
+
+}
+
+
+/* COMING SOON */
+
+.card span{
+
+background:#eef2f7;
+
+color:#697386;
+
+padding:7px 13px;
+
+border-radius:20px;
+
+font-size:12px;
+
+font-weight:bold;
+}
+
+
+/* FOOTER */
+
+footer{
+
+margin-top:30px;
+
+background:#061b4f;
+
+color:white;
+
+text-align:center;
+
 padding:20px;
+
 font-size:13px;
 }
+
+
+/* TABLET */
+
+@media(max-width:800px){
+
+.pyq-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:14px;
+
+}
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+.container{
+
+padding:0 12px;
+
+}
+
+.title{
+
+font-size:23px;
+
+}
+
+.pyq-box{
+
+padding:15px;
+
+border-radius:18px;
+
+}
+
+.pyq-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:10px;
+
+}
+
+.card{
+
+padding:18px 8px;
+
+min-height:165px;
+
+border-radius:15px;
+
+}
+
+.card h2{
+
+font-size:16px;
+
+}
+
+.card p{
+
+font-size:11px;
+
+}
+
+.btn{
+
+font-size:10px;
+
+padding:8px 9px;
+
+margin:3px;
+
+}
+
+}
+
+
+/* VERY SMALL MOBILE */
+
+@media(max-width:360px){
+
+.pyq-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.card{
+
+min-height:150px;
+
+}
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-<div class="logo">🎓 EduCare C.C.</div>
-<div class="tagline">WBTET • CTET • TET • Teacher Preparation</div>
+
+<div class="logo">
+🎓 EduCare C.C.
+</div>
+
+<div class="tagline">
+WBTET • CTET • TET • Teacher Preparation
+</div>
+
 </header>
+
+
+<!-- NAVIGATION -->
+
 <nav>
-  <a href="../index.html">🏠 Home</a>
-  <a href="../index.html#wbtet">WBTET</a>
-  <a href="../index.html#ctet">CTET</a>
-  <a href="../index.html#other-tet">Other TET</a>
-  <a href="../index.html#mock-tests">🎯 Mock Tests</a>
-  <a href="../index.html#updates">📢 Updates</a>
+
+<a href="../index.html">
+🏠 Home
+</a>
+
+<a href="../index.html#wbtet">
+WBTET
+</a>
+
+<a href="../index.html#ctet">
+CTET
+</a>
+
+<a href="../index.html#other-tet">
+Other TET
+</a>
+
+<a href="../index.html#mock-tests">
+🎯 Mock Tests
+</a>
+
+<a href="../index.html#updates">
+📢 Updates
+</a>
+
 </nav>
+
+
+<!-- MAIN -->
+
 <div class="container">
 
-<a class="back" href="../index.html">← Back to EduCare C.C.</a>
 
-<h1 class="title">📚 WBTET Previous Year Questions</h1>
+<a class="back"
+href="../index.html">
+
+← Back to EduCare C.C.
+
+</a>
+
+
+<h1 class="title">
+
+📚 WBTET Previous Year Questions
+
+</h1>
+
 
 <p class="subtitle">
+
 Year-wise WBTET Question Papers & Previous Year Papers
+
 </p>
+
+
+<!-- BLUE BOX -->
+
+<div class="pyq-box">
+
+
+<div class="pyq-grid">
+
+
+<!-- 2013 -->
 
 <div class="card">
 
-<h2>📄 WBTET 2013</h2>
+<h2>
+📄 WBTET 2013
+</h2>
 
 <p>
 WBTET 2013 Previous Year Question Paper
 </p>
 
-<a class="btn" href="../2013.pdf" target="_blank">
+<a class="btn"
+href="../2013.pdf"
+target="_blank">
+
 📖 View PDF
+
 </a>
 
-<a class="btn" href="../2013.pdf" download>
+<a class="btn"
+href="../2013.pdf"
+download>
+
 ⬇️ Download PDF
+
 </a>
 
 </div>
 
+
+<!-- 2015 CANCELLED -->
+
 <div class="card">
 
-<h2>📄 WBTET 2015 – Cancelled Paper</h2>
+<h2>
+📄 WBTET 2015 – Cancelled Paper
+</h2>
 
 <p>
 WBTET 2015 Cancelled Question Paper
 </p>
 
-<a class="btn" href="../2015(cancel).pdf" target="_blank">
+<a class="btn"
+href="../2015(cancel).pdf"
+target="_blank">
+
 📖 View PDF
+
 </a>
 
-<a class="btn" href="../2015(cancel).pdf" download>
+<a class="btn"
+href="../2015(cancel).pdf"
+download>
+
 ⬇️ Download PDF
+
 </a>
 
 </div>
-  <div class="card">
 
-<h2>📄 WBTET 2015</h2>
+
+<!-- 2015 -->
+
+<div class="card">
+
+<h2>
+📄 WBTET 2015
+</h2>
 
 <p>
 WBTET 2015 Previous Year Question Paper
 </p>
 
-<a class="btn" href="../2015.pdf" target="_blank">
+<a class="btn"
+href="../2015.pdf"
+target="_blank">
+
 📖 View PDF
+
 </a>
 
-<a class="btn" href="../2015.pdf" download>
-⬇ Download PDF
+<a class="btn"
+href="../2015.pdf"
+download>
+
+⬇️ Download PDF
+
 </a>
 
 </div>
 
 
+<!-- 2017 -->
+
 <div class="card">
 
-<h2>📄 WBTET 2017</h2>
+<h2>
+📄 WBTET 2017
+</h2>
 
 <p>
 WBTET 2017 Previous Year Question Paper
 </p>
 
-<a class="btn" href="../2017.pdf" target="_blank">
+<a class="btn"
+href="../2017.pdf"
+target="_blank">
+
 📖 View PDF
+
 </a>
 
-<a class="btn" href="../2017.pdf" download>
-⬇ Download PDF
+<a class="btn"
+href="../2017.pdf"
+download>
+
+⬇️ Download PDF
+
 </a>
 
 </div>
 
 
+<!-- SPECIAL TET 2026 -->
+
 <div class="card">
 
-<h2>📘 WB Special TET 2026</h2>
+<h2>
+📘 WB Special TET 2026
+</h2>
 
 <p>
 WB Special TET 2026 Question Paper
 </p>
 
-<a class="btn" href="../WB%20Special%20TET%202026.pdf" target="_blank">
+<a class="btn"
+href="../WB%20Special%20TET%202026.pdf"
+target="_blank">
+
 📖 View PDF
+
 </a>
 
-<a class="btn" href="../WB%20Special%20TET%202026.pdf" download>
-⬇ Download PDF
+<a class="btn"
+href="../WB%20Special%20TET%202026.pdf"
+download>
+
+⬇️ Download PDF
+
 </a>
 
 </div>
 
+
+<!-- 2022 -->
+
 <div class="card">
 
-<h2>📄 WBTET 2022</h2>
+<h2>
+📄 WBTET 2022
+</h2>
 
 <p>
 Previous Year Question Paper
 </p>
 
-<span>Coming Soon</span>
+<span>
+Coming Soon
+</span>
 
 </div>
 
+
+<!-- 2023 -->
+
 <div class="card">
 
-<h2>📄 WBTET 2023</h2>
+<h2>
+📄 WBTET 2023
+</h2>
 
 <p>
 Previous Year Question Paper
 </p>
 
-<span>Coming Soon</span>
+<span>
+Coming Soon
+</span>
+
+</div>
+
 
 </div>
 
 </div>
+
+
+</div>
+
+
+<!-- FOOTER -->
 
 <footer>
+
 © EduCare Coaching Centre (EduCare C.C.)<br>
+
 WBTET • CTET • TET • CDP Practice
+
 </footer>
 
+
 </body>
+
 </html>
