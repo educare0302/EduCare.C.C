@@ -12,107 +12,224 @@
 <style>
 
 /* =========================
-   BASIC RESET
+   BASIC
 ========================= */
 
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
+box-sizing:border-box;
+margin:0;
+padding:0;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f5f9ff;
-    color:#172033;
-    line-height:1.6;
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f8ff;
+color:#172033;
+line-height:1.6;
 }
 
 
 /* =========================
-   MAIN PAGE
+   HEADER
+========================= */
+
+header{
+background:linear-gradient(
+135deg,
+#061b4f,
+#064c9b,
+#00a9d9
+);
+
+color:white;
+
+padding:35px 15px;
+
+text-align:center;
+}
+
+
+.logo{
+font-size:32px;
+font-weight:bold;
+}
+
+
+.tagline{
+margin-top:7px;
+font-size:15px;
+color:#eaf7ff;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+
+background:#041535;
+
+padding:12px 8px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+box-shadow:
+0 3px 15px rgba(0,0,0,.20);
+
+}
+
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+padding:9px 13px;
+
+border-radius:20px;
+
+font-size:14px;
+
+font-weight:bold;
+
+transition:.2s;
+
+}
+
+
+nav a:hover{
+
+background:#00a9d9;
+
+}
+
+
+/* =========================
+   PAGE CONTAINER
 ========================= */
 
 .container{
-    width:100%;
-    max-width:1100px;
-    margin:0 auto;
-    padding:0 18px 35px;
+
+max-width:1100px;
+
+margin:0 auto;
+
+padding:25px 15px 40px;
+
 }
 
 
 /* =========================
-   TOP MOCK TEST TITLE
+   BACK LINK
 ========================= */
 
-.page-title{
-    text-align:center;
-    font-size:32px;
-    font-weight:700;
-    color:#064c9b;
-    padding:28px 0 25px;
+.back{
+
+display:inline-block;
+
+margin-bottom:18px;
+
+color:#064c9b;
+
+font-weight:bold;
+
+text-decoration:none;
+
+}
+
+
+.back:hover{
+
+text-decoration:underline;
+
 }
 
 
 /* =========================
-   BLUE MAIN BOX
+   MOCK TEST PAGE TITLE
+========================= */
+
+.main-title{
+
+text-align:center;
+
+color:#064c9b;
+
+font-size:30px;
+
+font-weight:bold;
+
+margin-bottom:22px;
+
+}
+
+
+/* =========================
+   BLUE MOCK TEST BOX
 ========================= */
 
 .exam-box{
 
-    background:
-    linear-gradient(
-        135deg,
-        #061b4f 0%,
-        #064c9b 50%,
-        #087fc1 100%
-    );
+background:linear-gradient(
+135deg,
+#061b4f 0%,
+#064c9b 50%,
+#087fc1 100%
+);
 
-    border-radius:26px;
+color:white;
 
-    padding:38px 28px 40px;
+padding:38px 28px 40px;
 
-    color:white;
+border-radius:26px;
 
-    box-shadow:
-    0 8px 25px rgba(0,70,150,0.25);
+box-shadow:
+0 8px 25px rgba(0,70,150,.25);
+
 }
 
 
 /* =========================
-   MAIN HEADING
+   EXAM TITLE
 ========================= */
 
 .exam-box h1{
 
-    text-align:center;
+text-align:center;
 
-    font-size:30px;
+font-size:30px;
 
-    font-weight:700;
-
-    margin-bottom:8px;
+margin-bottom:8px;
 
 }
 
 
-/* =========================
-   SUBTITLE
-========================= */
-
 .intro{
 
-    text-align:center;
+text-align:center;
 
-    font-size:17px;
+font-size:16px;
 
-    color:#eaf7ff;
+color:#eaf7ff;
 
-    margin-bottom:26px;
+margin-bottom:27px;
 
 }
 
@@ -123,140 +240,123 @@ body{
 
 .subject-grid{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-    repeat(3,1fr);
+grid-template-columns:
+repeat(3,1fr);
 
-    gap:20px;
+gap:20px;
 
 }
 
 
 /* =========================
-   SUBJECT CARD
+   SUBJECT CARDS
 ========================= */
 
 .subject{
 
-    background:#ffffff;
+background:white;
 
-    color:#172033;
+color:#172033;
 
-    border-radius:22px;
+border-radius:22px;
 
-    min-height:220px;
+padding:25px 15px;
 
-    padding:25px 15px;
+min-height:220px;
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+flex-direction:column;
 
-    justify-content:center;
+justify-content:center;
 
-    align-items:center;
+align-items:center;
 
-    text-align:center;
+text-align:center;
 
-    box-shadow:
-    0 5px 15px rgba(0,0,0,0.15);
+box-shadow:
+0 5px 15px rgba(0,0,0,.15);
 
-    transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+transition:.2s;
 
 }
 
-
-/* CARD HOVER */
 
 .subject:hover{
 
-    transform:translateY(-4px);
+transform:translateY(-4px);
 
-    box-shadow:
-    0 9px 22px rgba(0,0,0,0.20);
+box-shadow:
+0 9px 22px rgba(0,0,0,.20);
 
 }
 
-
-/* =========================
-   SUBJECT TITLE
-========================= */
 
 .subject h2{
 
-    color:#064c9b;
+color:#064c9b;
 
-    font-size:23px;
+font-size:23px;
 
-    font-weight:700;
-
-    margin-bottom:10px;
+margin-bottom:10px;
 
 }
 
-
-/* =========================
-   SUBJECT DESCRIPTION
-========================= */
 
 .subject p{
 
-    font-size:13px;
+font-size:13px;
 
-    color:#687386;
+color:#687386;
 
-    min-height:42px;
+margin-bottom:16px;
 
-    margin-bottom:15px;
+min-height:42px;
 
 }
 
 
 /* =========================
-   START TEST BUTTON
+   START BUTTON
 ========================= */
 
 .start-btn{
 
-    display:inline-block;
+display:inline-block;
 
-    background:
-    linear-gradient(
-        135deg,
-        #00a9d9,
-        #008fd0
-    );
+background:linear-gradient(
+135deg,
+#00a9d9,
+#008fd0
+);
 
-    color:white;
+color:white;
 
-    text-decoration:none;
+text-decoration:none;
 
-    padding:11px 21px;
+padding:11px 21px;
 
-    border-radius:28px;
+border-radius:28px;
 
-    font-size:13px;
+font-size:13px;
 
-    font-weight:bold;
+font-weight:bold;
 
-    box-shadow:
-    0 4px 10px rgba(0,150,220,0.25);
+box-shadow:
+0 4px 10px rgba(0,150,220,.25);
 
-    transition:0.2s;
+transition:.2s;
 
 }
 
 
-/* BUTTON HOVER */
-
 .start-btn:hover{
 
-    background:#064c9b;
+background:#064c9b;
 
-    transform:translateY(-2px);
+transform:translateY(-2px);
 
 }
 
@@ -267,19 +367,19 @@ body{
 
 .coming{
 
-    display:inline-block;
+display:inline-block;
 
-    background:#eef2f7;
+background:#eef2f7;
 
-    color:#697386;
+color:#697386;
 
-    padding:8px 17px;
+padding:8px 17px;
 
-    border-radius:24px;
+border-radius:24px;
 
-    font-size:12px;
+font-size:12px;
 
-    font-weight:bold;
+font-weight:bold;
 
 }
 
@@ -290,15 +390,15 @@ body{
 
 footer{
 
-    text-align:center;
+text-align:center;
 
-    margin-top:28px;
+margin-top:30px;
 
-    padding:18px;
+padding:22px;
 
-    font-size:12px;
+font-size:12px;
 
-    color:#687386;
+color:#687386;
 
 }
 
@@ -309,12 +409,12 @@ footer{
 
 @media(max-width:800px){
 
-    .subject-grid{
+.subject-grid{
 
-        grid-template-columns:
-        repeat(2,1fr);
+grid-template-columns:
+repeat(2,1fr);
 
-    }
+}
 
 }
 
@@ -323,108 +423,142 @@ footer{
    MOBILE
 ========================= */
 
-@media(max-width:520px){
-
-    .container{
-
-        padding:
-        0 10px 25px;
-
-    }
+@media(max-width:600px){
 
 
-    .page-title{
+header{
 
-        font-size:25px;
+padding:25px 10px;
 
-        padding:
-        22px 0 18px;
-
-    }
+}
 
 
-    .exam-box{
+.logo{
 
-        padding:
-        25px 12px 28px;
+font-size:27px;
 
-        border-radius:20px;
-
-    }
+}
 
 
-    .exam-box h1{
+.tagline{
 
-        font-size:22px;
+font-size:13px;
 
-    }
-
-
-    .intro{
-
-        font-size:13px;
-
-        margin-bottom:20px;
-
-    }
+}
 
 
-    .subject-grid{
+nav{
 
-        grid-template-columns:
-        repeat(2,1fr);
+gap:3px;
 
-        gap:10px;
+padding:9px 4px;
 
-    }
-
-
-    .subject{
-
-        min-height:175px;
-
-        padding:
-        18px 7px;
-
-        border-radius:17px;
-
-    }
+}
 
 
-    .subject h2{
+nav a{
 
-        font-size:17px;
+font-size:11px;
 
-    }
+padding:7px 8px;
 
-
-    .subject p{
-
-        font-size:11px;
-
-        margin-bottom:12px;
-
-    }
+}
 
 
-    .start-btn{
+.container{
 
-        font-size:10px;
+padding:18px 10px 30px;
 
-        padding:
-        9px 12px;
-
-    }
+}
 
 
-    .coming{
+.main-title{
 
-        font-size:10px;
+font-size:25px;
 
-        padding:
-        7px 10px;
+margin-bottom:18px;
 
-    }
+}
+
+
+.exam-box{
+
+padding:25px 12px 28px;
+
+border-radius:20px;
+
+}
+
+
+.exam-box h1{
+
+font-size:22px;
+
+}
+
+
+.intro{
+
+font-size:13px;
+
+margin-bottom:20px;
+
+}
+
+
+.subject-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:10px;
+
+}
+
+
+.subject{
+
+min-height:175px;
+
+padding:18px 7px;
+
+border-radius:17px;
+
+}
+
+
+.subject h2{
+
+font-size:17px;
+
+}
+
+
+.subject p{
+
+font-size:11px;
+
+margin-bottom:12px;
+
+}
+
+
+.start-btn{
+
+font-size:10px;
+
+padding:9px 12px;
+
+}
+
+
+.coming{
+
+font-size:10px;
+
+padding:7px 10px;
+
+}
 
 }
 
@@ -435,18 +569,17 @@ footer{
 
 @media(max-width:360px){
 
-    .subject-grid{
+.subject-grid{
 
-        grid-template-columns:1fr;
+grid-template-columns:1fr;
 
-    }
+}
 
+.subject{
 
-    .subject{
+min-height:155px;
 
-        min-height:155px;
-
-    }
+}
 
 }
 
@@ -458,223 +591,292 @@ footer{
 <body>
 
 
+<!-- =========================
+     WEBSITE HEADER
+========================= -->
+
+<header>
+
+<div class="logo">
+
+🎓 EduCare C.C.
+
+</div>
+
+
+<div class="tagline">
+
+WBTET • CTET • TET • Teacher Preparation
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+<a href="../">
+🏠 Home
+</a>
+
+<a href="../#wbtet">
+WBTET
+</a>
+
+<a href="../#ctet">
+CTET
+</a>
+
+<a href="../#other-tet">
+Other TET
+</a>
+
+<a href="./">
+🎯 Mock Tests
+</a>
+
+<a href="../#updates">
+📢 Updates
+</a>
+
+</nav>
+
+
+
+<!-- =========================
+     PAGE CONTENT
+========================= -->
+
 <div class="container">
 
 
-    <!-- =====================
-         TOP TITLE
-    ====================== -->
-
-    <div class="page-title">
-
-        🎯 Mock Tests
-
-    </div>
-
-
-
-    <!-- =====================
-         MAIN MOCK TEST BOX
-    ====================== -->
-
-    <section class="exam-box">
-
-
-        <!-- MAIN HEADING -->
-
-        <h1>
-
-            📝 WBTET Mock Tests 2026
-
-        </h1>
-
-
-        <!-- SUBTITLE -->
-
-        <p class="intro">
-
-            Practice subject-wise WBTET questions with instant results.
-
-        </p>
-
-
-
-        <!-- =====================
-             SUBJECT CARDS
-        ====================== -->
-
-        <div class="subject-grid">
-
-
-
-            <!-- =================
-                 CDP
-            ================== -->
-
-            <div class="subject">
-
-                <h2>
-
-                    🧠 CDP
-
-                </h2>
-
-
-                <p>
-
-                    Child Development &amp; Pedagogy
-
-                </p>
+<!-- BACK TO HOME -->
 
 <a
-    href="../wbtet-cdp/"
-    class="start-btn"
+href="../"
+class="back"
 >
-    START TEST
+
+← Back to EduCare C.C.
+
 </a>
-                
 
-            </div>
 
 
+<!-- MOCK TEST HEADING -->
 
-            <!-- =================
-                 EVS
-            ================== -->
+<h2 class="main-title">
 
-            <div class="subject">
+🎯 Mock Tests
 
-                <h2>
+</h2>
 
-                    🌿 EVS
 
-                </h2>
 
+<!-- =========================
+     WBTET MOCK TEST BOX
+========================= -->
 
-                <p>
+<section class="exam-box">
 
-                    Environmental Studies
 
-                </p>
+<h1>
 
+📝 WBTET Mock Tests 2026
 
-                <span class="coming">
+</h1>
 
-                    Coming Soon
 
-                </span>
+<p class="intro">
 
-            </div>
+Practice subject-wise WBTET questions with instant results.
 
+</p>
 
 
-            <!-- =================
-                 MATHEMATICS
-            ================== -->
 
-            <div class="subject">
+<!-- SUBJECT GRID -->
 
-                <h2>
+<div class="subject-grid">
 
-                    ➗ Mathematics
 
-                </h2>
 
+<!-- =====================
+     CDP
+===================== -->
 
-                <p>
+<div class="subject">
 
-                    WBTET Mathematics Practice
+<h2>
 
-                </p>
+🧠 CDP
 
+</h2>
 
-                <span class="coming">
 
-                    Coming Soon
+<p>
 
-                </span>
+Child Development &amp; Pedagogy
 
-            </div>
+</p>
 
 
+<a
+href="../wbtet-cdp/"
+class="start-btn"
+>
 
-            <!-- =================
-                 ENGLISH
-            ================== -->
+START TEST
 
-            <div class="subject">
+</a>
 
-                <h2>
+</div>
 
-                    📖 English
 
-                </h2>
 
+<!-- =====================
+     EVS
+===================== -->
 
-                <p>
+<div class="subject">
 
-                    English Language Practice
+<h2>
 
-                </p>
+🌿 EVS
 
+</h2>
 
-                <span class="coming">
 
-                    Coming Soon
+<p>
 
-                </span>
+Environmental Studies
 
-            </div>
+</p>
 
 
+<span class="coming">
 
-            <!-- =================
-                 LANGUAGE
-            ================== -->
+Coming Soon
 
-            <div class="subject">
+</span>
 
-                <h2>
+</div>
 
-                    🔤 Language
 
-                </h2>
 
+<!-- =====================
+     MATHEMATICS
+===================== -->
 
-                <p>
+<div class="subject">
 
-                    Language Practice
+<h2>
 
-                </p>
+➗ Mathematics
 
+</h2>
 
-                <span class="coming">
 
-                    Coming Soon
+<p>
 
-                </span>
+WBTET Mathematics Practice
 
-            </div>
+</p>
 
 
-        </div>
+<span class="coming">
 
+Coming Soon
 
-    </section>
+</span>
 
+</div>
 
 
-    <!-- =====================
-         FOOTER
-    ====================== -->
 
-    <footer>
+<!-- =====================
+     ENGLISH
+===================== -->
 
-        © 2026 EduCare C.C.
-        <br>
-        WBTET • CTET • TET • Teacher Preparation
+<div class="subject">
 
-    </footer>
+<h2>
+
+📖 English
+
+</h2>
+
+
+<p>
+
+English Language Practice
+
+</p>
+
+
+<span class="coming">
+
+Coming Soon
+
+</span>
+
+</div>
+
+
+
+<!-- =====================
+     LANGUAGE
+===================== -->
+
+<div class="subject">
+
+<h2>
+
+🔤 Language
+
+</h2>
+
+
+<p>
+
+Language Practice
+
+</p>
+
+
+<span class="coming">
+
+Coming Soon
+
+</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+© 2026 EduCare C.C.
+
+<br>
+
+WBTET • CTET • TET • Teacher Preparation
+
+</footer>
 
 
 </div>
