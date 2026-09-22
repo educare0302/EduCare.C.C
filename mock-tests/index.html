@@ -11,293 +11,442 @@
 
 <style>
 
+/* =========================
+   BASIC RESET
+========================= */
+
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
-scroll-behavior:smooth;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,sans-serif;
-background:#f4f8ff;
-color:#172033;
-line-height:1.6;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f9ff;
+    color:#172033;
+    line-height:1.6;
 }
 
-/* HEADER */
 
-header{
-background:linear-gradient(135deg,#061b4f,#064c9b,#00a9d9);
-color:white;
-padding:30px 15px;
-text-align:center;
-}
-
-.logo{
-font-size:28px;
-font-weight:bold;
-}
-
-.tagline{
-margin-top:6px;
-font-size:14px;
-}
-
-/* NAVIGATION */
-
-nav{
-background:#041535;
-padding:10px 8px;
-display:flex;
-justify-content:center;
-gap:8px;
-flex-wrap:wrap;
-position:sticky;
-top:0;
-z-index:1000;
-box-shadow:0 3px 15px rgba(0,0,0,.2);
-}
-
-nav a{
-color:white;
-text-decoration:none;
-padding:9px 13px;
-border-radius:20px;
-font-size:14px;
-font-weight:bold;
-}
-
-nav a:hover{
-background:#00a9d9;
-}
-
-/* CONTAINER */
+/* =========================
+   MAIN PAGE
+========================= */
 
 .container{
-max-width:1000px;
-margin:25px auto;
-padding:0 15px;
+    width:100%;
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 18px 35px;
 }
 
-/* BACK */
 
-.back{
-display:inline-block;
-margin-bottom:18px;
-color:#064c9b;
-text-decoration:none;
-font-weight:bold;
+/* =========================
+   TOP MOCK TEST TITLE
+========================= */
+
+.page-title{
+    text-align:center;
+    font-size:32px;
+    font-weight:700;
+    color:#064c9b;
+    padding:28px 0 25px;
 }
 
-/* MAIN TITLE */
 
-.main-title{
-text-align:center;
-color:#064c9b;
-font-size:28px;
-margin-bottom:22px;
-}
-
-/* MAIN MOCK TEST BOX */
+/* =========================
+   BLUE MAIN BOX
+========================= */
 
 .exam-box{
-background:linear-gradient(135deg,#061b4f,#064c9b,#087fc1);
-color:white;
-padding:28px;
-border-radius:22px;
-box-shadow:0 8px 25px rgba(0,80,160,.25);
+
+    background:
+    linear-gradient(
+        135deg,
+        #061b4f 0%,
+        #064c9b 50%,
+        #087fc1 100%
+    );
+
+    border-radius:26px;
+
+    padding:38px 28px 40px;
+
+    color:white;
+
+    box-shadow:
+    0 8px 25px rgba(0,70,150,0.25);
 }
 
-/* EXAM TITLE */
+
+/* =========================
+   MAIN HEADING
+========================= */
 
 .exam-box h1{
-text-align:center;
-font-size:27px;
-margin-bottom:8px;
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
 }
+
+
+/* =========================
+   SUBTITLE
+========================= */
 
 .intro{
-text-align:center;
-font-size:15px;
-color:#eaf7ff;
-margin-bottom:24px;
+
+    text-align:center;
+
+    font-size:17px;
+
+    color:#eaf7ff;
+
+    margin-bottom:26px;
+
 }
 
-/* SUBJECT GRID */
+
+/* =========================
+   SUBJECT GRID
+========================= */
 
 .subject-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:16px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+
 }
 
-/* SUBJECT CARD */
+
+/* =========================
+   SUBJECT CARD
+========================= */
 
 .subject{
-background:white;
-color:#172033;
-border-radius:18px;
-padding:24px 14px;
-min-height:190px;
 
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+    background:#ffffff;
 
-text-align:center;
+    color:#172033;
 
-box-shadow:0 5px 15px rgba(0,0,0,.14);
+    border-radius:22px;
 
-transition:.2s;
+    min-height:220px;
+
+    padding:25px 15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.15);
+
+    transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
 }
+
+
+/* CARD HOVER */
 
 .subject:hover{
-transform:translateY(-4px);
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 9px 22px rgba(0,0,0,0.20);
+
 }
+
+
+/* =========================
+   SUBJECT TITLE
+========================= */
 
 .subject h2{
-color:#064c9b;
-font-size:20px;
-margin-bottom:8px;
+
+    color:#064c9b;
+
+    font-size:23px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
 }
+
+
+/* =========================
+   SUBJECT DESCRIPTION
+========================= */
 
 .subject p{
-font-size:13px;
-color:#687386;
-margin-bottom:16px;
+
+    font-size:13px;
+
+    color:#687386;
+
+    min-height:42px;
+
+    margin-bottom:15px;
+
 }
 
-/* START BUTTON */
+
+/* =========================
+   START TEST BUTTON
+========================= */
 
 .start-btn{
-display:inline-block;
 
-background:linear-gradient(135deg,#00a9d9,#008fd0);
+    display:inline-block;
 
-color:white;
+    background:
+    linear-gradient(
+        135deg,
+        #00a9d9,
+        #008fd0
+    );
 
-text-decoration:none;
+    color:white;
 
-padding:10px 18px;
+    text-decoration:none;
 
-border-radius:25px;
+    padding:11px 21px;
 
-font-size:13px;
+    border-radius:28px;
 
-font-weight:bold;
+    font-size:13px;
 
-box-shadow:0 4px 10px rgba(0,150,220,.25);
+    font-weight:bold;
+
+    box-shadow:
+    0 4px 10px rgba(0,150,220,0.25);
+
+    transition:0.2s;
+
 }
+
+
+/* BUTTON HOVER */
 
 .start-btn:hover{
-transform:translateY(-2px);
-background:#064c9b;
+
+    background:#064c9b;
+
+    transform:translateY(-2px);
+
 }
 
-/* COMING SOON */
+
+/* =========================
+   COMING SOON
+========================= */
 
 .coming{
-background:#eef2f7;
-color:#697386;
 
-padding:8px 15px;
+    display:inline-block;
 
-border-radius:22px;
+    background:#eef2f7;
 
-font-size:12px;
+    color:#697386;
 
-font-weight:bold;
+    padding:8px 17px;
+
+    border-radius:24px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-text-align:center;
 
-margin-top:30px;
+    text-align:center;
 
-padding:20px;
+    margin-top:28px;
 
-font-size:12px;
+    padding:18px;
 
-color:#687386;
+    font-size:12px;
+
+    color:#687386;
+
 }
 
-/* TABLET */
+
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:800px){
 
-.subject-grid{
-grid-template-columns:repeat(2,1fr);
-}
+    .subject-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
 
 }
 
-/* MOBILE */
 
-@media(max-width:500px){
+/* =========================
+   MOBILE
+========================= */
 
-.container{
-padding:0 10px;
+@media(max-width:520px){
+
+    .container{
+
+        padding:
+        0 10px 25px;
+
+    }
+
+
+    .page-title{
+
+        font-size:25px;
+
+        padding:
+        22px 0 18px;
+
+    }
+
+
+    .exam-box{
+
+        padding:
+        25px 12px 28px;
+
+        border-radius:20px;
+
+    }
+
+
+    .exam-box h1{
+
+        font-size:22px;
+
+    }
+
+
+    .intro{
+
+        font-size:13px;
+
+        margin-bottom:20px;
+
+    }
+
+
+    .subject-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:10px;
+
+    }
+
+
+    .subject{
+
+        min-height:175px;
+
+        padding:
+        18px 7px;
+
+        border-radius:17px;
+
+    }
+
+
+    .subject h2{
+
+        font-size:17px;
+
+    }
+
+
+    .subject p{
+
+        font-size:11px;
+
+        margin-bottom:12px;
+
+    }
+
+
+    .start-btn{
+
+        font-size:10px;
+
+        padding:
+        9px 12px;
+
+    }
+
+
+    .coming{
+
+        font-size:10px;
+
+        padding:
+        7px 10px;
+
+    }
+
 }
 
-.main-title{
-font-size:23px;
-}
 
-.exam-box{
-padding:18px 10px;
-border-radius:18px;
-}
-
-.exam-box h1{
-font-size:22px;
-}
-
-.intro{
-font-size:13px;
-}
-
-.subject-grid{
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-}
-
-.subject{
-min-height:165px;
-padding:18px 7px;
-}
-
-.subject h2{
-font-size:16px;
-}
-
-.subject p{
-font-size:11px;
-margin-bottom:12px;
-}
-
-.start-btn{
-font-size:10px;
-padding:8px 11px;
-}
-
-.coming{
-font-size:10px;
-padding:7px 10px;
-}
-
-}
-
-/* VERY SMALL MOBILE */
+/* =========================
+   VERY SMALL MOBILE
+========================= */
 
 @media(max-width:360px){
 
-.subject-grid{
-grid-template-columns:1fr;
-}
+    .subject-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .subject{
+
+        min-height:155px;
+
+    }
 
 }
 
@@ -305,20 +454,234 @@ grid-template-columns:1fr;
 
 </head>
 
+
 <body>
 
 
-<header>
+<div class="container">
 
-<div class="logo">
-🎓 EduCare C.C.
+
+    <!-- =====================
+         TOP TITLE
+    ====================== -->
+
+    <div class="page-title">
+
+        🎯 Mock Tests
+
+    </div>
+
+
+
+    <!-- =====================
+         MAIN MOCK TEST BOX
+    ====================== -->
+
+    <section class="exam-box">
+
+
+        <!-- MAIN HEADING -->
+
+        <h1>
+
+            📝 WBTET Mock Tests 2026
+
+        </h1>
+
+
+        <!-- SUBTITLE -->
+
+        <p class="intro">
+
+            Practice subject-wise WBTET questions with instant results.
+
+        </p>
+
+
+
+        <!-- =====================
+             SUBJECT CARDS
+        ====================== -->
+
+        <div class="subject-grid">
+
+
+
+            <!-- =================
+                 CDP
+            ================== -->
+
+            <div class="subject">
+
+                <h2>
+
+                    🧠 CDP
+
+                </h2>
+
+
+                <p>
+
+                    Child Development &amp; Pedagogy
+
+                </p>
+
+
+                <a
+                    href="cdp-mock-test.html"
+                    class="start-btn"
+                >
+
+                    START TEST
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================
+                 EVS
+            ================== -->
+
+            <div class="subject">
+
+                <h2>
+
+                    🌿 EVS
+
+                </h2>
+
+
+                <p>
+
+                    Environmental Studies
+
+                </p>
+
+
+                <span class="coming">
+
+                    Coming Soon
+
+                </span>
+
+            </div>
+
+
+
+            <!-- =================
+                 MATHEMATICS
+            ================== -->
+
+            <div class="subject">
+
+                <h2>
+
+                    ➗ Mathematics
+
+                </h2>
+
+
+                <p>
+
+                    WBTET Mathematics Practice
+
+                </p>
+
+
+                <span class="coming">
+
+                    Coming Soon
+
+                </span>
+
+            </div>
+
+
+
+            <!-- =================
+                 ENGLISH
+            ================== -->
+
+            <div class="subject">
+
+                <h2>
+
+                    📖 English
+
+                </h2>
+
+
+                <p>
+
+                    English Language Practice
+
+                </p>
+
+
+                <span class="coming">
+
+                    Coming Soon
+
+                </span>
+
+            </div>
+
+
+
+            <!-- =================
+                 LANGUAGE
+            ================== -->
+
+            <div class="subject">
+
+                <h2>
+
+                    🔤 Language
+
+                </h2>
+
+
+                <p>
+
+                    Language Practice
+
+                </p>
+
+
+                <span class="coming">
+
+                    Coming Soon
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================
+         FOOTER
+    ====================== -->
+
+    <footer>
+
+        © 2026 EduCare C.C.
+        <br>
+        WBTET • CTET • TET • Teacher Preparation
+
+    </footer>
+
+
 </div>
 
-<div class="tagline">
-WBTET • CTET • TET • Teacher Preparation
-</div>
 
-</header>
+</body>
 
-
-<nav
+</html>
