@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>WB Primary Teacher Salary Calculator | EduCare C.C.</title>
+<title>WB Primary Teachers | EduCare C.C.</title>
 
 <style>
 
@@ -12,6 +13,7 @@
 box-sizing:border-box;
 margin:0;
 padding:0;
+scroll-behavior:smooth;
 }
 
 body{
@@ -49,6 +51,10 @@ display:flex;
 justify-content:center;
 gap:8px;
 flex-wrap:wrap;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 15px rgba(0,0,0,.20);
 }
 
 nav a{
@@ -67,7 +73,7 @@ background:#00a9d9;
 /* CONTAINER */
 
 .container{
-max-width:900px;
+max-width:1000px;
 margin:25px auto;
 padding:0 15px;
 }
@@ -82,48 +88,138 @@ text-decoration:none;
 font-weight:bold;
 }
 
-/* TITLE BOX */
+/* TITLE */
 
-.title-box{
-background:linear-gradient(135deg,#061b4f,#064c9b,#087fc1);
-color:white;
-padding:25px 18px;
-border-radius:20px;
+.page-title{
 text-align:center;
-box-shadow:0 8px 25px rgba(0,80,160,.25);
-}
-
-.title-box h1{
-font-size:27px;
+color:#064c9b;
+font-size:30px;
 margin-bottom:8px;
 }
 
-.title-box p{
-font-size:14px;
+.subtitle{
+text-align:center;
+color:#666;
+margin-bottom:25px;
 }
 
-/* CALCULATOR */
+/* MAIN BLUE BOX */
 
-.calculator{
+.teacher-box{
+background:linear-gradient(135deg,#061b4f,#064c9b,#087fc1);
+padding:28px;
+border-radius:22px;
+box-shadow:0 8px 25px rgba(0,80,160,.25);
+}
+
+/* MAIN CARDS */
+
+.teacher-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+}
+
+.teacher-card{
 background:white;
-margin-top:20px;
-padding:22px;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,.10);
+color:#172033;
+border-radius:18px;
+padding:22px 15px;
+text-align:center;
+min-height:190px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+transition:.2s;
 }
 
-.calculator h2{
+.teacher-card:hover{
+transform:translateY(-4px);
+}
+
+.card-icon{
+font-size:38px;
+margin-bottom:8px;
+}
+
+.teacher-card h3{
+color:#064c9b;
+font-size:19px;
+margin-bottom:7px;
+}
+
+.teacher-card p{
+font-size:13px;
+color:#687386;
+margin-bottom:14px;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+background:linear-gradient(135deg,#00a9d9,#008fd0);
+color:white;
+text-decoration:none;
+padding:9px 17px;
+border-radius:22px;
+font-size:12px;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,150,220,.25);
+}
+
+/* SECTIONS */
+
+.section{
+background:white;
+margin-top:22px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.section h2{
 text-align:center;
 color:#064c9b;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
-/* INPUT GRID */
+/* INFO */
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.info-item{
+background:#f5f8fc;
+padding:15px;
+border-radius:12px;
+border-left:4px solid #087fc1;
+}
+
+.info-item strong{
+color:#064c9b;
+}
+
+/* SALARY CALCULATOR */
+
+.calculator{
+background:#f8fbff;
+padding:20px;
+border-radius:16px;
+}
 
 .input-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:15px;
+gap:14px;
 }
 
 .input-group{
@@ -133,40 +229,34 @@ flex-direction:column;
 
 .input-group label{
 font-weight:bold;
-font-size:14px;
-margin-bottom:6px;
-color:#26364d;
+font-size:13px;
+margin-bottom:5px;
 }
 
 .input-group input{
-padding:12px;
-border:1px solid #cbd5e1;
-border-radius:10px;
-font-size:15px;
+padding:11px;
+border:1px solid #ccd5e0;
+border-radius:9px;
+font-size:14px;
 outline:none;
 }
 
-.input-group input:focus{
-border-color:#008fd0;
-box-shadow:0 0 0 2px rgba(0,169,217,.12);
-}
+/* BUTTONS BELOW INPUTS */
 
-/* BUTTONS */
-
-.buttons{
+.calc-buttons{
 display:flex;
 gap:10px;
 margin-top:20px;
 }
 
-button{
+.calc-buttons button{
 flex:1;
 border:none;
-padding:13px;
-border-radius:25px;
-font-size:15px;
+padding:12px;
+border-radius:22px;
 font-weight:bold;
 cursor:pointer;
+font-size:14px;
 }
 
 .calculate{
@@ -175,37 +265,37 @@ color:white;
 }
 
 .reset{
-background:#eef2f7;
+background:#e9eef5;
 color:#344054;
 }
 
 /* RESULTS */
 
 .results{
-margin-top:25px;
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:12px;
+margin-top:20px;
 }
 
-.result-card{
-padding:17px;
-border-radius:14px;
-background:#f5f8fc;
-border-left:5px solid #087fc1;
+.result{
+background:white;
+padding:15px;
+border-radius:12px;
+border-left:4px solid #087fc1;
 }
 
-.result-card span{
+.result span{
 display:block;
-font-size:13px;
-color:#667085;
+font-size:12px;
+color:#687386;
 }
 
-.result-card strong{
+.result strong{
 display:block;
-font-size:20px;
-margin-top:4px;
+font-size:19px;
 color:#064c9b;
+margin-top:3px;
 }
 
 .inhand{
@@ -228,28 +318,74 @@ font-size:28px;
 /* NOTE */
 
 .note{
-margin-top:20px;
-padding:15px;
+margin-top:18px;
 background:#fff8e6;
 border-left:4px solid #f0a000;
-border-radius:10px;
-font-size:13px;
+padding:13px;
+border-radius:9px;
+font-size:12px;
 color:#5c4800;
+}
+
+/* COMING SOON */
+
+.coming{
+background:#eef2f7;
+color:#697386;
+padding:7px 13px;
+border-radius:20px;
+font-size:11px;
+font-weight:bold;
 }
 
 /* FOOTER */
 
 footer{
-text-align:center;
 margin-top:30px;
+background:#061b4f;
+color:white;
+text-align:center;
 padding:20px;
 font-size:12px;
-color:#687386;
 }
 
 /* MOBILE */
 
-@media(max-width:600px){
+@media(max-width:750px){
+
+.teacher-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:500px){
+
+.teacher-box{
+padding:15px;
+}
+
+.teacher-grid{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.teacher-card{
+padding:18px 8px;
+min-height:165px;
+}
+
+.card-icon{
+font-size:30px;
+}
+
+.teacher-card h3{
+font-size:16px;
+}
+
+.teacher-card p{
+font-size:11px;
+}
 
 .input-grid{
 grid-template-columns:1fr;
@@ -263,24 +399,39 @@ grid-template-columns:1fr;
 grid-column:auto;
 }
 
-.title-box h1{
-font-size:23px;
+.page-title{
+font-size:24px;
 }
 
-.calculator{
-padding:17px;
+.section{
+padding:18px;
+}
+
+.info-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:360px){
+
+.teacher-grid{
+grid-template-columns:1fr;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
 
-<div class="logo">EduCare C.C.</div>
+<div class="logo">
+👩‍🏫 EduCare C.C.
+</div>
 
 <div class="tagline">
 WBTET • CTET • TET • Teacher Preparation
@@ -292,6 +443,8 @@ WBTET • CTET • TET • Teacher Preparation
 
 <a href="../index.html">🏠 Home</a>
 <a href="../index.html#wbtet">WBTET</a>
+<a href="../index.html#ctet">CTET</a>
+<a href="../index.html#other-tet">Other TET</a>
 <a href="../index.html#mock-tests">🎯 Mock Tests</a>
 <a href="../index.html#updates">📢 Updates</a>
 
@@ -303,106 +456,252 @@ WBTET • CTET • TET • Teacher Preparation
 ← Back to EduCare C.C.
 </a>
 
-<div class="title-box">
+<h1 class="page-title">
+👩‍🏫 WB Primary Teachers
+</h1>
 
-<h1>💰 WB Primary Teacher Salary Calculator</h1>
+<p class="subtitle">
+Salary • Teacher Updates • School Books • TET Information • Important Notices
+</p>
+
+
+<!-- SIX MAIN CARDS -->
+
+<div class="teacher-box">
+
+<div class="teacher-grid">
+
+
+<div class="teacher-card">
+
+<div class="card-icon">💰</div>
+
+<h3>Salary Calculator</h3>
 
 <p>
-Calculate Gross Salary, Deductions & Estimated In-Hand Salary
+Calculate Gross Salary, Deductions & Estimated In-Hand Salary.
 </p>
+
+<a href="#salary-calculator" class="btn">
+🧮 Open Calculator
+</a>
 
 </div>
 
-<div class="calculator">
 
-<h2>📊 Salary Details</h2>
+<div class="teacher-card">
+
+<div class="card-icon">📊</div>
+
+<h3>Salary & Pay Details</h3>
+
+<p>
+Primary Teacher Pay Level, Basic Pay, Allowances & Deductions.
+</p>
+
+<a href="#salary-details" class="btn">
+📊 View Details
+</a>
+
+</div>
+
+
+<div class="teacher-card">
+
+<div class="card-icon">📢</div>
+
+<h3>Teacher Updates</h3>
+
+<p>
+Latest updates and important information for WB Primary Teachers.
+</p>
+
+<a href="#teacher-updates" class="btn">
+📢 View Updates
+</a>
+
+</div>
+
+
+<div class="teacher-card">
+
+<div class="card-icon">📚</div>
+
+<h3>School Books</h3>
+
+<p>
+Class 1 to Class 5 school book resources.
+</p>
+
+<a href="#school-books" class="btn">
+📚 Classes 1–5
+</a>
+
+</div>
+
+
+<div class="teacher-card">
+
+<div class="card-icon">📝</div>
+
+<h3>TET Information</h3>
+
+<p>
+WBTET, TET syllabus, exam pattern and important information.
+</p>
+
+<a href="#tet-information" class="btn">
+📝 View TET Info
+</a>
+
+</div>
+
+
+<div class="teacher-card">
+
+<div class="card-icon">📅</div>
+
+<h3>Important Notices</h3>
+
+<p>
+Important education notices, dates and teacher-related updates.
+</p>
+
+<a href="#important-notices" class="btn">
+📅 View Notices
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- SALARY CALCULATOR -->
+
+<section class="section" id="salary-calculator">
+
+<h2>
+💰 WB Primary Teacher Salary Calculator
+</h2>
+
+<div class="calculator">
 
 <div class="input-grid">
 
 <div class="input-group">
+
 <label>Basic Pay (₹)</label>
+
 <input type="number" id="basic" value="30700">
+
 </div>
 
+
 <div class="input-group">
+
 <label>DA (%)</label>
+
 <input type="number" id="da" value="38">
+
 </div>
 
+
 <div class="input-group">
+
 <label>HRA (%)</label>
+
 <input type="number" id="hra" value="12">
+
 </div>
 
+
 <div class="input-group">
+
 <label>Medical Allowance (₹)</label>
+
 <input type="number" id="medical" value="500">
+
 </div>
 
+
 <div class="input-group">
+
 <label>Professional Tax (₹)</label>
+
 <input type="number" id="ptax" value="200">
+
 </div>
+
 
 <div class="input-group">
+
 <label>GPF (%)</label>
+
 <input type="number" id="gpf" value="6">
-</div>
 
 </div>
 
-<div class="buttons">
+</div>
+
+
+<div class="calc-buttons">
 
 <button class="calculate" onclick="calculateSalary()">
 🧮 Calculate Salary
 </button>
 
-<button class="reset" onclick="resetCalculator()">
+<button class="reset" onclick="resetSalary()">
 🔄 Reset
 </button>
 
 </div>
 
+
 <div class="results">
 
-<div class="result-card">
+<div class="result">
 <span>DA Amount</span>
 <strong id="daAmount">₹0</strong>
 </div>
 
-<div class="result-card">
+<div class="result">
 <span>HRA Amount</span>
 <strong id="hraAmount">₹0</strong>
 </div>
 
-<div class="result-card">
+<div class="result">
 <span>Medical Allowance</span>
 <strong id="medicalAmount">₹0</strong>
 </div>
 
-<div class="result-card">
+<div class="result">
 <span>Gross Salary</span>
 <strong id="grossSalary">₹0</strong>
 </div>
 
-<div class="result-card">
+<div class="result">
 <span>GPF Deduction</span>
 <strong id="gpfAmount">₹0</strong>
 </div>
 
-<div class="result-card">
+<div class="result">
 <span>Professional Tax</span>
 <strong id="ptaxAmount">₹0</strong>
 </div>
 
-<div class="result-card">
+<div class="result">
 <span>Total Deduction</span>
 <strong id="totalDeduction">₹0</strong>
 </div>
 
-<div class="result-card inhand">
+<div class="result inhand">
 
-<span>💵 Estimated In-Hand Salary</span>
+<span>
+💵 Estimated In-Hand Salary
+</span>
 
 <strong id="inHand">₹0</strong>
 
@@ -410,31 +709,260 @@ Calculate Gross Salary, Deductions & Estimated In-Hand Salary
 
 </div>
 
+
 <div class="note">
 
 <strong>Note:</strong>
-This calculator provides an estimated salary based on the values entered by the user.
-Actual salary may vary depending on applicable government rules, deductions and other allowances.
+This calculator provides an estimated salary based on the values entered.
+Actual salary may vary according to applicable government rules,
+allowances and deductions.
 
 </div>
 
 </div>
 
+</section>
+
+
+<!-- SALARY DETAILS -->
+
+<section class="section" id="salary-details">
+
+<h2>📊 Salary & Pay Details</h2>
+
+<div class="info-grid">
+
+<div class="info-item">
+<strong>Primary Teacher</strong><br>
+Classes 1–5
 </div>
+
+<div class="info-item">
+<strong>Pay Level</strong><br>
+Level 9 — ROPA 2019
+</div>
+
+<div class="info-item">
+<strong>Starting Basic Pay</strong><br>
+₹28,900
+</div>
+
+<div class="info-item">
+<strong>Salary Components</strong><br>
+Basic Pay + DA + HRA + Medical Allowance
+</div>
+
+<div class="info-item">
+<strong>Common Deductions</strong><br>
+Professional Tax, GPF and other applicable deductions
+</div>
+
+<div class="info-item">
+<strong>Important</strong><br>
+Actual salary depends on applicable government rules and individual service details.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TEACHER UPDATES -->
+
+<section class="section" id="teacher-updates">
+
+<h2>📢 Teacher Updates</h2>
+
+<div class="info-grid">
+
+<div class="info-item">
+<strong>WB Primary Teacher Updates</strong><br>
+Latest recruitment, service-related and education updates will be added here.
+</div>
+
+<div class="info-item">
+<strong>WBBPE Updates</strong><br>
+Important Board-related notices and announcements.
+</div>
+
+<div class="info-item">
+<strong>Training & Courses</strong><br>
+Important teacher training and professional development updates.
+</div>
+
+<div class="info-item">
+<strong>Exam Updates</strong><br>
+TET and teacher examination related information.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SCHOOL BOOKS -->
+
+<section class="section" id="school-books">
+
+<h2>📚 School Books — Class 1 to 5</h2>
+
+<div class="teacher-grid">
+
+
+<div class="teacher-card">
+
+<div class="card-icon">📘</div>
+
+<h3>Class 1</h3>
+
+<p>School books and learning resources.</p>
+
+<span class="coming">Coming Soon</span>
+
+</div>
+
+
+<div class="teacher-card">
+
+<div class="card-icon">📗</div>
+
+<h3>Class 2</h3>
+
+<p>School books and learning resources.</p>
+
+<span class="coming">Coming Soon</span>
+
+</div>
+
+
+<div class="teacher-card">
+
+<div class="card-icon">📙</div>
+
+<h3>Class 3</h3>
+
+<p>School books and learning resources.</p>
+
+<span class="coming">Coming Soon</span>
+
+</div>
+
+
+<div class="teacher-card">
+
+<div class="card-icon">📕</div>
+
+<h3>Class 4</h3>
+
+<p>School books and learning resources.</p>
+
+<span class="coming">Coming Soon</span>
+
+</div>
+
+
+<div class="teacher-card">
+
+<div class="card-icon">📚</div>
+
+<h3>Class 5</h3>
+
+<p>School books and learning resources.</p>
+
+<span class="coming">Coming Soon</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- TET -->
+
+<section class="section" id="tet-information">
+
+<h2>📝 TET Information</h2>
+
+<div class="info-grid">
+
+<div class="info-item">
+<strong>WBTET</strong><br>
+West Bengal Teacher Eligibility Test related information.
+</div>
+
+<div class="info-item">
+<strong>TET Syllabus</strong><br>
+Subject-wise syllabus and preparation resources.
+</div>
+
+<div class="info-item">
+<strong>Exam Pattern</strong><br>
+Important information about question pattern, marks and examination structure.
+</div>
+
+<div class="info-item">
+<strong>Preparation</strong><br>
+Mock Tests, Previous Year Questions and study materials.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NOTICES -->
+
+<section class="section" id="important-notices">
+
+<h2>📅 Important Notices</h2>
+
+<div class="info-grid">
+
+<div class="info-item">
+<strong>WBBPE Notices</strong><br>
+Important West Bengal Board of Primary Education notices.
+</div>
+
+<div class="info-item">
+<strong>School Education Department</strong><br>
+Important notifications and announcements.
+</div>
+
+<div class="info-item">
+<strong>Important Dates</strong><br>
+Examination, training, application and other important dates.
+</div>
+
+<div class="info-item">
+<strong>Teacher Notices</strong><br>
+Teacher-related circulars and important information.
+</div>
+
+</div>
+
+</section>
+
+
+</div>
+
 
 <footer>
 
 © EduCare Coaching Centre (EduCare C.C.)<br>
-WB Primary Teacher Salary Calculator
+
+WB Primary Teachers • WBTET • CTET • TET
 
 </footer>
 
 
 <script>
 
-function formatRupee(amount){
+function money(amount){
 
-return "₹" + Math.round(amount).toLocaleString("en-IN");
+return "₹" +
+Math.round(amount).toLocaleString("en-IN");
 
 }
 
@@ -460,75 +988,64 @@ let gpfRate =
 parseFloat(document.getElementById("gpf").value) || 0;
 
 
-/* ALLOWANCES */
+let daAmount =
+basic * daRate / 100;
 
-let daAmount = basic * daRate / 100;
+let hraAmount =
+basic * hraRate / 100;
 
-let hraAmount = basic * hraRate / 100;
-
-
-/* GROSS */
-
-let grossSalary =
+let gross =
 basic + daAmount + hraAmount + medical;
-
-
-/* GPF */
 
 let gpfAmount =
 basic * gpfRate / 100;
 
-
-/* TOTAL DEDUCTION */
-
 let totalDeduction =
 gpfAmount + ptax;
 
-
-/* IN HAND */
-
 let inHand =
-grossSalary - totalDeduction;
+gross - totalDeduction;
 
-
-/* DISPLAY */
 
 document.getElementById("daAmount").innerText =
-formatRupee(daAmount);
+money(daAmount);
 
 document.getElementById("hraAmount").innerText =
-formatRupee(hraAmount);
+money(hraAmount);
 
 document.getElementById("medicalAmount").innerText =
-formatRupee(medical);
+money(medical);
 
 document.getElementById("grossSalary").innerText =
-formatRupee(grossSalary);
+money(gross);
 
 document.getElementById("gpfAmount").innerText =
-formatRupee(gpfAmount);
+money(gpfAmount);
 
 document.getElementById("ptaxAmount").innerText =
-formatRupee(ptax);
+money(ptax);
 
 document.getElementById("totalDeduction").innerText =
-formatRupee(totalDeduction);
+money(totalDeduction);
 
 document.getElementById("inHand").innerText =
-formatRupee(inHand);
+money(inHand);
 
 }
 
 
-/* RESET */
-
-function resetCalculator(){
+function resetSalary(){
 
 document.getElementById("basic").value = 30700;
+
 document.getElementById("da").value = 38;
+
 document.getElementById("hra").value = 12;
+
 document.getElementById("medical").value = 500;
+
 document.getElementById("ptax").value = 200;
+
 document.getElementById("gpf").value = 6;
 
 calculateSalary();
@@ -536,11 +1053,10 @@ calculateSalary();
 }
 
 
-/* INITIAL CALCULATION */
-
 calculateSalary();
 
 </script>
 
 </body>
-</html>
+
+  </html>
