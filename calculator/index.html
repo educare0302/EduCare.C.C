@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WB Teachers Salary Calculator | EduCare C.C.</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: linear-gradient(135deg, #005bea, #00c6fb);
+    color: white;
+    text-align: center;
+    padding: 22px 15px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.tagline {
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+nav a {
+    text-decoration: none;
+    color: #005bea;
+    font-weight: bold;
+    padding: 9px 13px;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: #eaf3ff;
+}
+
+/* ================= MAIN ================= */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 15px 40px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-title h1 {
+    margin: 0;
+    color: #005bea;
+    font-size: 28px;
+}
+
+.page-title p {
+    color: #555;
+    margin-top: 8px;
+}
+
+/* ================= BASIC PAY ================= */
+
+.basic-box {
+    background: white;
+    max-width: 600px;
+    margin: 0 auto 25px;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.basic-box label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.basic-box input {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid #005bea;
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+}
+
+/* ================= SALARY SECTIONS ================= */
+
+.salary-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.salary-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.09);
+}
+
+.salary-card h2 {
+    text-align: center;
+    margin-top: 0;
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    background: linear-gradient(135deg, #005bea, #00c6fb);
+}
+
+.salary-card.october h2 {
+    background: linear-gradient(135deg, #ff7b00, #ffb000);
+}
+
+.salary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 0;
+    border-bottom: 1px solid #eee;
+    gap: 10px;
+}
+
+.salary-row:last-child {
+    border-bottom: none;
+}
+
+.salary-row span:first-child {
+    font-weight: 600;
+}
+
+.amount {
+    font-weight: bold;
+    color: #005bea;
+}
+
+.salary-card.october .amount {
+    color: #e66a00;
+}
+
+.edit-input {
+    width: 100px;
+    padding: 7px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    text-align: right;
+    font-size: 15px;
+}
+
+/* ================= GROSS / INHAND ================= */
+
+.gross-row {
+    background: #eef6ff;
+    padding: 13px 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.inhand-row {
+    background: #e8fff1;
+    padding: 14px 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.inhand-row .amount {
+    color: #008a45;
+}
+
+/* ================= INCREASE ================= */
+
+.increase-box {
+    margin-top: 25px;
+    background: linear-gradient(135deg, #111827, #374151);
+    color: white;
+    padding: 25px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+}
+
+.increase-box h2 {
+    margin-top: 0;
+}
+
+.increase-amount {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.increase-percent {
+    font-size: 20px;
+}
+
+/* ================= NOTE ================= */
+
+.note {
+    margin-top: 20px;
+    background: #fff8e6;
+    border-left: 5px solid #ffae00;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    background: #111827;
+    color: white;
+    padding: 20px 10px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .logo {
+        font-size: 24px;
+    }
+
+    nav {
+        gap: 2px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 8px 9px;
+    }
+
+    .page-title h1 {
+        font-size: 24px;
+    }
+
+    .salary-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .salary-row {
+        font-size: 14px;
+    }
+
+    .edit-input {
+        width: 85px;
+    }
+
+    .increase-amount {
+        font-size: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <div class="logo">🎓 EduCare C.C.</div>
+    <div class="tagline">
+        WBTET • CTET • TET • Teacher Preparation
+    </div>
+</header>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+    <a href="../">🏠 Home</a>
+    <a href="../#wbtet">WBTET</a>
+    <a href="../#ctet">CTET</a>
+    <a href="../#other-tet">Other TET</a>
+    <a href="../mock-tests/">🎯 Mock Tests</a>
+    <a href="../#updates">📢 Updates</a>
+</nav>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="container">
+
+    <div class="page-title">
+        <h1>💰 WB Teachers Salary Calculator</h1>
+        <p>Before October vs October 2026 Salary Calculation</p>
+    </div>
+
+    <!-- BASIC PAY -->
+
+    <div class="basic-box">
+
+        <label for="basicPay">
+            💵 Enter Basic Pay
+        </label>
+
+        <input
+            type="number"
+            id="basicPay"
+            placeholder="Example: 30700"
+            oninput="calculateSalary()"
+        >
+
+        <p style="font-size:13px;color:#666;margin-bottom:0;">
+            Basic Pay ek baar enter karein — dono sections automatically calculate honge.
+        </p>
+
+    </div>
+
+    <!-- ================= TWO SECTIONS ================= -->
+
+    <div class="salary-sections">
+
+        <!-- BEFORE OCTOBER -->
+
+        <div class="salary-card">
+
+            <h2>📅 Before October</h2>
+
+            <div class="salary-row">
+                <span>Basic Pay</span>
+                <span class="amount" id="basicBefore">₹0</span>
+            </div>
+
+            <div class="salary-row">
+                <span>DA (%)</span>
+                <input
+                    class="edit-input"
+                    type="number"
+                    id="daBeforePercent"
+                    value="18"
+                    oninput="calculateSalary()"
+                >
+            </div>
+
+            <div class="salary-row">
+                <span>DA Amount</span>
+                <span class="amount" id="daBefore">₹0</span>
+            </div>
+
+            <div class="salary-row">
+                <span>HRA (%)</span>
+                <input
+                    class="edit-input"
+                    type="number"
+                    id="hraBeforePercent"
+                    value="12"
+                    oninput="calculateSalary()"
+                >
+            </div>
+
+            <div class="salary-row">
+                <span>HRA Amount</span>
+                <span class="amount" id="hraBefore">₹0</span>
+            </div>
+
+            <div class="salary-row">
+                <span>Medical Allowance</span>
+                <input
+                    class="edit-input"
+                    type="number"
+                    id="maBefore"
+                    value="500"
+                    oninput="calculateSalary()"
+                >
+            </div>
+
+            <div class="salary-row gross-row">
+                <span>Gross Salary</span>
+                <span class="amount" id="grossBefore">₹0</span>
+            </div>
+
+            <div class="salary-row">
+                <span>PF / GPF (%)</span>
+                <input
+                    class="edit-input"
+                    type="number"
+                    id="pfBeforePercent"
+                    value="6"
+                    oninput="calculateSalary()"
+                >
+            </div>
+
+            <div class="salary-row">
+                <span>PF / GPF Amount</span>
+                <span class="amount" id="pfBefore">₹0</span>
+            </div>
+
+            <div class="salary-row">
+                <span>P. Tax</span>
+                <input
+                    class="edit-input"
+                    type="number"
+                    id="ptaxBefore"
+                    value="200"
+                    oninput="calculateSalary()"
+                >
+            </div>
+
+            <div class="salary-row inhand-row">
+                <span>In-Hand Salary</span>
+                <span class="amount" id="inhandBefore">₹0</span>
+            </div>
+
+        </div>
+
+
+        <!-- OCTOBER 2026 -->
+
+        <div class="salary-card october">
+
+            <h2>📅 October 2026</h2>
+
+            <div class="salary-row">
+                <span>Basic Pay</span>
+                <span class="amount" id="basicOctober">₹0</span>
+            </div>
+
+            <div class="salary-row">
+                <span>DA (%)</span>
+                <input
+                    class="edit-input"
+                    type="number"
+                    id="daOctoberPercent"
+                    value="38"
+                    oninput="calculateSalary()"
+                >
+            </div>
+
+            <div class="salary-row">
+                <span>DA Amount</span>
+                <span class="amount" id="daOctober">₹0</span>
+            </div>
+
+            <div class="salary-row">
+                <span>HRA (%)</span>
+                <input
+                    class="edit-input"
+                    type="number"
+                    id="hraOctoberPercent"
+                    value="12"
+                    oninput="calculateSalary()"
+                >
+            </div>
+
+            <div class="salary-row">
+                <span>HRA Amount</span>
+                <span class="amount" id="hraOctober">₹0</span>
+            </div>
+
+            <div class="salary-row">
+                <span>Medical Allowance</span>
+                <input
+                    class="edit-input"
+                    type="number"
+                    id="maOctober"
+                    value="500"
+                    oninput="calculateSalary()"
+                >
+            </div>
+
+            <div class="salary-row gross-row">
+                <span>Gross Salary</span>
+                <span class="amount" id="grossOctober">₹0</span>
+            </div>
+
+            <div class="salary-row">
+                <span>PF / GPF (%)</span>
+                <input
+                    class="edit-input"
+                    type="number"
+                    id="pfOctoberPercent"
+                    value="6"
+                    oninput="calculateSalary()"
+                >
+            </div>
+
+            <div class="salary-row">
+                <span>PF / GPF Amount</span>
+                <span class="amount" id="pfOctober">₹0</span>
+            </div>
+
+            <div class="salary-row">
+                <span>P. Tax</span>
+                <input
+                    class="edit-input"
+                    type="number"
+                    id="ptaxOctober"
+                    value="200"
+                    oninput="calculateSalary()"
+                >
+            </div>
+
+            <div class="salary-row inhand-row">
+                <span>In-Hand Salary</span>
+                <span class="amount" id="inhandOctober">₹0</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= INCREASE ================= -->
+
+    <div class="increase-box">
+
+        <h2>📈 Salary Increase</h2>
+
+        <div>
+            October In-Hand Salary − Before October In-Hand Salary
+        </div>
+
+        <div class="increase-amount" id="salaryIncrease">
+            ₹0
+        </div>
+
+        <div class="increase-percent" id="salaryIncreasePercent">
+            0% Increase
+        </div>
+
+    </div>
+
+
+    <!-- ================= NOTE ================= -->
+
+    <div class="note">
+
+        <strong>📌 Note:</strong><br>
+
+        Is calculator mein default calculation ke liye:
+        <strong>Before October DA = 18%</strong> aur
+        <strong>October 2026 DA = 38%</strong> rakha gaya hai.
+
+        HRA, Medical Allowance, PF/GPF aur P. Tax ko aap future mein
+        apni requirement ke according edit kar sakte hain.
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+    © 2026 EduCare C.C. | WBTET • CTET • TET • Teacher Preparation
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function formatCurrency(amount) {
+
+    return "₹" + Math.round(amount).toLocaleString("en-IN");
+
+}
+
+
+function calculateSalary() {
+
+    let basic =
+        parseFloat(document.getElementById("basicPay").value) || 0;
+
+
+    /* ================= BEFORE OCTOBER ================= */
+
+    let daBeforePercent =
+        parseFloat(document.getElementById("daBeforePercent").value) || 0;
+
+    let hraBeforePercent =
+        parseFloat(document.getElementById("hraBeforePercent").value) || 0;
+
+    let maBefore =
+        parseFloat(document.getElementById("maBefore").value) || 0;
+
+    let pfBeforePercent =
+        parseFloat(document.getElementById("pfBeforePercent").value) || 0;
+
+    let ptaxBefore =
+        parseFloat(document.getElementById("ptaxBefore").value) || 0;
+
+
+    let daBefore =
+        basic * daBeforePercent / 100;
+
+    let hraBefore =
+        basic * hraBeforePercent / 100;
+
+    let grossBefore =
+        basic + daBefore + hraBefore + maBefore;
+
+    let pfBefore =
+        basic * pfBeforePercent / 100;
+
+    let inhandBefore =
+        grossBefore - pfBefore - ptaxBefore;
+
+
+    /* ================= OCTOBER 2026 ================= */
+
+    let daOctoberPercent =
+        parseFloat(document.getElementById("daOctoberPercent").value) || 0;
+
+    let hraOctoberPercent =
+        parseFloat(document.getElementById("hraOctoberPercent").value) || 0;
+
+    let maOctober =
+        parseFloat(document.getElementById("maOctober").value) || 0;
+
+    let pfOctoberPercent =
+        parseFloat(document.getElementById("pfOctoberPercent").value) || 0;
+
+    let ptaxOctober =
+        parseFloat(document.getElementById("ptaxOctober").value) || 0;
+
+
+    let daOctober =
+        basic * daOctoberPercent / 100;
+
+    let hraOctober =
+        basic * hraOctoberPercent / 100;
+
+    let grossOctober =
+        basic + daOctober + hraOctober + maOctober;
+
+    let pfOctober =
+        basic * pfOctoberPercent / 100;
+
+    let inhandOctober =
+        grossOctober - pfOctober - ptaxOctober;
+
+
+    /* ================= DISPLAY ================= */
+
+    document.getElementById("basicBefore").textContent =
+        formatCurrency(basic);
+
+    document.getElementById("daBefore").textContent =
+        formatCurrency(daBefore);
+
+    document.getElementById("hraBefore").textContent =
+        formatCurrency(hraBefore);
+
+    document.getElementById("grossBefore").textContent =
+        formatCurrency(grossBefore);
+
+    document.getElementById("pfBefore").textContent =
+        formatCurrency(pfBefore);
+
+    document.getElementById("inhandBefore").textContent =
+        formatCurrency(inhandBefore);
+
+
+    document.getElementById("basicOctober").textContent =
+        formatCurrency(basic);
+
+    document.getElementById("daOctober").textContent =
+        formatCurrency(daOctober);
+
+    document.getElementById("hraOctober").textContent =
+        formatCurrency(hraOctober);
+
+    document.getElementById("grossOctober").textContent =
+        formatCurrency(grossOctober);
+
+    document.getElementById("pfOctober").textContent =
+        formatCurrency(pfOctober);
+
+    document.getElementById("inhandOctober").textContent =
+        formatCurrency(inhandOctober);
+
+
+    /* ================= SALARY INCREASE ================= */
+
+    let increase =
+        inhandOctober - inhandBefore;
+
+
+    let increasePercent = 0;
+
+    if (inhandBefore > 0) {
+        increasePercent =
+            (increase / inhandBefore) * 100;
+    }
+
+
+    document.getElementById("salaryIncrease").textContent =
+        formatCurrency(increase);
+
+
+    document.getElementById("salaryIncreasePercent").textContent =
+        increasePercent.toFixed(2) + "% Increase";
+
+}
+
+
+/* Initial Calculation */
+
+calculateSalary();
+
+</script>
+
+</body>
+  </html>
