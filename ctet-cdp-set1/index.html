@@ -1,1 +1,97 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>CTET CDP Mock Test 1 | EduCare C.C.</title>
+<style>
+*{box-sizing:border-box} body{margin:0;background:#071d3f;color:#f4f8ff;font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+.header{background:linear-gradient(110deg,#08265b,#00a8c9);padding:18px 12px 14px;text-align:center}
+.logo{font-size:25px;font-weight:800;color:#fff} .logo span{color:#ffe33b}
+.tag{font-size:12px;margin-top:4px;color:#e6f8ff}
+.wrap{width:min(760px,94%);margin:0 auto;padding:14px 0 28px}
+.title{text-align:center;margin:5px 0 14px;font-size:23px;font-weight:800}
+.subtitle{text-align:center;color:#b9c9dd;font-size:13px;margin-bottom:16px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.stat{background:#142f56;border:1px solid #385478;border-radius:14px;padding:12px;text-align:center;box-shadow:0 5px 18px #0003}
+.stat small{display:block;color:#9fb2ca;font-size:10px;letter-spacing:.7px} .stat b{display:block;font-size:20px;margin-top:3px}
+.progress{height:8px;background:#1a365b;border-radius:10px;overflow:hidden;margin:10px 0 15px} .bar{height:100%;width:0;background:#10d8e8;transition:.2s}
+.card{background:#20385c;border:1px solid #46617f;border-radius:18px;padding:18px 16px 16px;box-shadow:0 10px 30px #0004}
+.qno{color:#dcecff;font-size:14px;font-weight:800;margin-bottom:14px}
+.question{font-size:18px;line-height:1.48;font-weight:700;margin-bottom:18px}
+.options{display:grid;gap:10px} .opt{width:100%;border:1px solid #55718f;background:#30496b;color:#f6fbff;border-radius:13px;padding:14px;text-align:left;font-size:15px;line-height:1.35;cursor:pointer;transition:.15s}
+.opt:hover{background:#3b567a} .opt.selected{background:#0bcfe2;color:#061c35;border-color:#67f3ff;font-weight:800}
+.buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+button{border:0;border-radius:12px;padding:14px;font-size:16px;font-weight:800;cursor:pointer}
+.prev{background:#395276;color:#fff} .next{background:#10d8e8;color:#05213d} .submit{background:#ff4b4b;color:#fff;width:100%;margin-top:14px}
+.result{display:none;background:#f7fbff;color:#122642;border-radius:18px;padding:20px;text-align:center;margin-top:15px}
+.result h2{margin:0 0 8px;color:#0b4e98} .score{font-size:34px;font-weight:900;margin:10px}
+.review{margin-top:15px;text-align:left} .review-item{padding:12px;border-radius:12px;background:#edf3fa;margin:8px 0;font-size:13px;line-height:1.4}
+.correct{border-left:5px solid #16b957} .wrong{border-left:5px solid #ef4444}
+.footer{text-align:center;color:#8fa5bf;font-size:11px;margin-top:20px;line-height:1.5}
+@media(max-width:520px){.wrap{width:94%;padding-top:10px}.title{font-size:21px}.question{font-size:16px}.opt{font-size:14px;padding:13px 12px}.stat b{font-size:18px}}
+</style>
+</head>
+<body>
+<header class="header"><div class="logo">🎓 EduCare <span>C.C.</span></div><div class="tag">WBTET • CTET • TET • Teacher Preparation</div></header>
+<main class="wrap">
+<div class="title">🧠 CTET CDP Mock Test 1</div>
+<div class="subtitle">Child Development &amp; Pedagogy • 30 Questions • 30 Minutes</div>
+<div class="stats"><div class="stat"><small>QUESTION</small><b id="counter">1 / 30</b></div><div class="stat"><small>TIME LEFT</small><b id="timer">30:00</b></div></div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+<section class="card" id="quizCard">
+<div class="qno" id="qno">Question 1 of 30</div>
+<div class="question" id="question"></div>
+<div class="options" id="options"></div>
+<div class="buttons"><button class="prev" id="prev">Previous</button><button class="next" id="next">Next</button></div>
+</section>
+<button class="submit" id="submit">Submit Test</button>
+<section class="result" id="result"><h2>🎯 Test Result</h2><div class="score" id="score"></div><div id="summary"></div><div class="review" id="review"></div></section>
+<div class="footer">© EduCare Coaching Centre (EduCare C.C.)<br>WBTET • CTET • TET • CDP Practice</div>
+</main>
+<script>
+const questions=[{"q": "Given below are two statements, one marked as Assertion (A) and the other as Reason (R). Read the statements and choose the correct option.<br><br><b>Assertion (A):</b> At any age, the teacher should focus on what the child cannot do rather than what they can do with help or support.<br><b>Reason (R):</b> Lev Vygotsky proposed that learning should include only those behaviours that the child can do independently.", "o": ["Both (A) and (R) are true, but (R) is not the correct explanation of (A).", "(A) is true, but (R) false.", "Both (A) and (R) are false.", "Both (A) and (R) are true and (R) is the correct explanation of (A)."], "a": 2}, {"q": "Which of the following statements about gifted children is correct ?", "o": ["Gifted children have superior academic, social as well as emotional skills.", "Gifted children excel in all areas of academics as well as in extra-curricular activities.", "Gifted children have a high degree of mental ability in specific domain of knowledge.", "Gifted children come up with novel and original solutions to given problems."], "a": 3}, {"q": "At which level of Kohlberg’s moral reasoning, children typically do not fully understand rules set down by others and society ?", "o": ["Post-operational level", "Pre-conventional level", "Conventional level", "Pre-operational level"], "a": 1}, {"q": "What should be the purposes of assessment ?<br><br>(i) To analyze students’ responses to find out what they know and understand<br>(ii) To identify gaps in knowledge<br>(iii) To identify effective learning activities<br>(iv) To assign comparative marks to students<br><br>Choose the correct option :", "o": ["(ii), (iii) and (iv)", "(i) and (ii)", "(i), (ii) and (iii)", "(i), (iii) and (iv)"], "a": 2}, {"q": "According to Lev Vygotsky’s theory, what is meant by the term ‘scaffolding’ ?", "o": ["A resource material that aids in better recall of concepts.", "A measurement tool used to assess a student’s cognitive development.", "A metaphorical term for when students are left to learn on their own.", "A strategy in which a more knowledgeable person provides support and guidance to help a less knowledgeable person learn a new skill or concept."], "a": 3}, {"q": "Which of the following factors contribute to growth and development during early childhood ?<br><br>(i) Cultural practices<br>(ii) Nutrition<br>(iii) Play opportunities<br>(iv) Quality of education<br><br>Choose the correct option :", "o": ["(i), (ii), (iii) and (iv)", "(ii), (iii) and (iv) only", "(i) and (ii) only", "(ii) and (iii) only"], "a": 0}, {"q": "Children demonstrate ___________ when they add the new schema for recognizing ‘horses’ to their other systems for identifying animals.", "o": ["Scaffolding", "Accommodation", "Metacognition", "Assimilation"], "a": 3}, {"q": "Lev Vygotsky’s theory has been criticized for :", "o": ["Considering prominence of emotional factors in forming motivation for learning.", "Emphasizing biological influences in the process of development at the expense of socio-cultural factors.", "Giving importance to students instead of teachers in the process of learning.", "Overlooking the role of genetics and biology in the course of learning."], "a": 3}, {"q": "Growth of the body and brain, sensory capabilities and motor skills are a part of :", "o": ["Sensory motor development", "Physical development", "Cognitive development", "Social development"], "a": 1}, {"q": "The processes of problem-solving are hindered by :", "o": ["Use of algorithms", "Heuristics", "Functional fixedness", "Analogical thinking"], "a": 2}, {"q": "Given below are two statements, one marked as Assertion (A) and the other as Reason (R). Read the statements and choose the correct option.<br><br><b>Assertion (A):</b> Self-regulation and impulse control should be a vital component of school curriculum.<br><b>Reason (R):</b> Socio-emotional skills help students to regulate their own learning.", "o": ["Both (A) and (R) are true and (R) is the correct explanation of (A).", "Both (A) and (R) are true, but (R) is not the correct explanation of (A).", "(A) is true, but (R) false.", "Both (A) and (R) are false."], "a": 0}, {"q": "Which of the following age-group corresponds to middle childhood ?", "o": ["6-11 years", "12-16 years", "3-5 years", "Birth to 2 years"], "a": 0}, {"q": "Given below are two statements, one marked as Assertion (A) and the other as Reason (R). Read the statements and choose the correct option.<br><br><b>Assertion (A):</b> To ensure assessment for learning, teacher-made tasks should be included for providing feedback to support student learning rather than the use of standardised outcome performances.<br><b>Reason (R):</b> Standardized tests are more aligned with the assessment of learning rather than assessment for learning.", "o": ["Both (A) and (R) are true and (R) is the correct explanation of (A).", "Both (A) and (R) are true, but (R) is not the correct explanation of (A).", "Both (A) and (R) are false.", "(A) is true, but (R) false."], "a": 0}, {"q": "Given below are two statements, one marked as Assertion (A) and the other as Reason (R). Read the statements and choose the correct option.<br><br><b>Assertion (A):</b> Children’s development is a direct result of unfolding of genetic codes.<br><b>Reason (R):</b> Childhood is a natural biological stage of development.", "o": ["Both (A) and (R) are true and (R) is the correct explanation of (A).", "Both (A) and (R) are false.", "Both (A) and (R) are true, but (R) is not the correct explanation of (A).", "(A) is true, but (R) false."], "a": 1}, {"q": "Given below are two statements, one marked as Assertion (A) and the other as Reason (R). Read the statements and choose the correct option.<br><br><b>Assertion (A):</b> Teachers should not associate learning with strict discipline because children do not learn effectively in an environment of fear and stress.<br><b>Reason (R):</b> Early childhood is a sensitive period for the development of language.", "o": ["(A) is true, but (R) false.", "Both (A) and (R) are false.", "Both (A) and (R) are true, but (R) is not the correct explanation of (A).", "Both (A) and (R) are true and (R) is the correct explanation of (A)."], "a": 0}, {"q": "Learned patterns of culturally approved masculine and feminine behaviours are referred to as ‘Gender ______’.", "o": ["stereotypes", "roles", "bias", "constancy"], "a": 0}, {"q": "How should a teacher deal with students who are distracted in her class ?", "o": ["Offer material rewards for every class that they are attentive in", "Give them severe punishment", "Call the parents and threaten to give severe punishment to the children", "Divide the class into manageable groups and let them learn cooperatively"], "a": 3}, {"q": "Given below are two statements, one marked as Assertion (A) and the other as Reason (R). Read the statements and choose the correct option.<br><br><b>Assertion (A):</b> Teachers in middle classes often have different expectations from boys and girls.<br><b>Reason (R):</b> Beliefs about ‘sex’ differences inform stereotypes, which often leads to just two labels — boys and girls.", "o": ["(A) is true, but (R) false.", "Both (A) and (R) are false.", "Both (A) and (R) are true, but (R) is not the correct explanation of (A).", "Both (A) and (R) are true and (R) is the correct explanation of (A)."], "a": 2}, {"q": "Given below are two statements, one marked as Assertion (A) and the other as Reason (R). Read the statements and choose the correct option.<br><br><b>Assertion (A):</b> Inclusion incorporates acceptance of differences and ensuring that all forms of exclusion are removed.<br><b>Reason (R):</b> Diversity should be valued rather than looking at it as an obstacle.", "o": ["Both (A) and (R) are true, but (R) is not the correct explanation of (A).", "Both (A) and (R) are true and (R) is the correct explanation of (A).", "Both (A) and (R) are false.", "(A) is true, but (R) false."], "a": 1}, {"q": "In order to nurture critical thinking skills among students, a teacher should design and deliver activities which demand :<br><br>(i) Logical reasoning and analysis.<br>(ii) Mere retrieval of previously learnt concepts.<br>(iii) Rote rehearsal and memorization.<br>(iv) Synthesis and evaluation of information.<br><br>Choose the correct option :", "o": ["(ii) and (iv)", "(ii) and (iii)", "(i) and (iv)", "(i) and (ii)"], "a": 2}, {"q": "According to Jean Piaget, intelligence is the ability to make changes in __________, the basic building blocks for learning.", "o": ["Concepts", "Cognitive maps", "Schemas", "Associations"], "a": 2}, {"q": "A constructivist classroom implies :", "o": ["Focus on reproduction of knowledge.", "Viewing learning as a passive process.", "Using multiple pedagogical strategies.", "Emphasis on the role of teacher as an instructor."], "a": 2}, {"q": "Dyslexia is a", "o": ["Developmental writing disorder", "Developmental reading disorder", "Developmental motor disorder", "Developmental autoimmune disorder"], "a": 1}, {"q": "Given below are two statements, one marked as Assertion (A) and the other as Reason (R). Read the statements and choose the correct option.<br><br><b>Assertion (A):</b> Effective teaching involves presenting information to students in an organized manner and provide opportunities for discussion.<br><b>Reason (R):</b> Learning is primarily a process of memorization and reproduction of information.", "o": ["Both (A) and (R) are false.", "Both (A) and (R) are true, but (R) is not the correct explanation of (A).", "(A) is true, but (R) false.", "Both (A) and (R) are true and (R) is the correct explanation of (A)."], "a": 2}, {"q": "Which of the following is an effective teaching strategy for children with Attention Deficit Hyperactivity Disorder ?", "o": ["Scheduling long and non-stop lectures", "Providing constant critical verbal feedback", "Giving tasks that require multi-tasking", "Using visual aids and hands-on activities"], "a": 3}, {"q": "Early symptoms of cerebral palsy can be identified by long delay in", "o": ["understanding and comprehension", "fine motor and gross motor skills", "reading and writing", "visual recognition of objects"], "a": 1}, {"q": "Development of children is :", "o": ["accurately predictable", "a simple unitary process", "disorderly and erratic", "a unified process"], "a": 3}, {"q": "In Jean Piaget’s theory, intelligence is about the development of :", "o": ["Ability to use cultural tools", "Control over one’s basic instincts", "Emotional maturity", "Cognitive schemas"], "a": 3}, {"q": "Which of the following order of presenting the concepts favours effective learning ?", "o": ["Known to unknown", "Complex to simple", "Iconic to symbolic", "Abstract to concrete"], "a": 0}, {"q": "Constructivist approaches of knowledge construction encourage students to :", "o": ["Rote-memorize the content.", "Interact and collaborate with peers.", "Follow singular way of solving a problem.", "Cast-off their cultural understandings."], "a": 1}];
+let idx=0, answers=Array(questions.length).fill(null), time=30*60, submitted=false;
+const $=id=>document.getElementById(id);
+function render(){
+  const x=questions[idx];
+  $("counter").textContent=(idx+1)+" / "+questions.length;
+  $("qno").textContent="Question "+(idx+1)+" of "+questions.length;
+  $("question").innerHTML=x.q;
+  $("options").innerHTML=x.o.map((o,i)=>`<button class="opt ${answers[idx]===i?'selected':''}" onclick="choose(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join("");
+  $("prev").disabled=idx===0; $("prev").style.opacity=idx===0?.55:1;
+  $("next").textContent=idx===questions.length-1?"Finish":"Next";
+  $("bar").style.width=((idx+1)/questions.length*100)+"%";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function choose(i){ if(!submitted){answers[idx]=i;render()} }
+function goNext(){ if(idx<questions.length-1){idx++;render()} else submitTest() }
+function goPrev(){ if(idx>0){idx--;render()} }
+function updateTimer(){
+  if(submitted)return;
+  const m=Math.floor(time/60),s=time%60;
+  $("timer").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+  if(time<=0)submitTest(true); else time--;
+}
+function submitTest(auto=false){
+  if(submitted)return;
+  submitted=true;
+  let score=0;
+  questions.forEach((x,i)=>{if(answers[i]===x.a)score++});
+  $("quizCard").style.display="none"; $("submit").style.display="none";
+  $("result").style.display="block";
+  $("score").textContent=score+" / "+questions.length;
+  $("summary").innerHTML=`Correct: <b>${score}</b> &nbsp; | &nbsp; Wrong: <b>${questions.length-score-answers.filter(a=>a===null).length}</b> &nbsp; | &nbsp; Unattempted: <b>${answers.filter(a=>a===null).length}</b><br><b>${Math.round(score/questions.length*100)}%</b>${auto?"<br><br>⏰ Time over — test submitted automatically.":""}`;
+  $("review").innerHTML="<h3>Answer Review</h3>"+questions.map((x,i)=>{
+    const ok=answers[i]===x.a;
+    const yours=answers[i]===null?"Not attempted":String.fromCharCode(65+answers[i]);
+    const correct=String.fromCharCode(65+x.a);
+    return `<div class="review-item ${ok?"correct":"wrong"}"><b>Q${i+1}.</b> Your answer: ${yours} &nbsp; | &nbsp; Correct: ${correct}</div>`;
+  }).join("");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+$("prev").onclick=goPrev; $("next").onclick=goNext; $("submit").onclick=()=>submitTest(false);
+render(); updateTimer(); setInterval(updateTimer,1000);
+</script>
+</body>
+</html>
