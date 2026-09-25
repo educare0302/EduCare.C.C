@@ -1,1 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WBTET English Mock Tests 2026 | EduCare C.C.</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f8ff;
+color:#172033;
+line-height:1.6;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+background:linear-gradient(
+135deg,
+#061b4f,
+#064c9b,
+#00a9d9
+);
+
+color:white;
+
+padding:35px 15px;
+
+text-align:center;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+}
+
+.tagline{
+margin-top:7px;
+font-size:15px;
+color:#eaf7ff;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+
+background:#041535;
+
+padding:12px 8px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+box-shadow:
+0 3px 15px rgba(0,0,0,.20);
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+padding:9px 13px;
+
+border-radius:20px;
+
+font-size:14px;
+
+font-weight:bold;
+
+transition:.2s;
+
+}
+
+nav a:hover{
+
+background:#00a9d9;
+
+}
+
+
+/* =========================
+   PAGE CONTAINER
+========================= */
+
+.container{
+
+max-width:1100px;
+
+margin:0 auto;
+
+padding:25px 15px 40px;
+
+}
+
+
+/* =========================
+   BACK LINK
+========================= */
+
+.back{
+
+display:inline-block;
+
+margin-bottom:18px;
+
+color:#064c9b;
+
+font-weight:bold;
+
+text-decoration:none;
+
+}
+
+.back:hover{
+
+text-decoration:underline;
+
+}
+
+
+/* =========================
+   MAIN TITLE
+========================= */
+
+.main-title{
+
+text-align:center;
+
+color:#064c9b;
+
+font-size:30px;
+
+font-weight:bold;
+
+margin-bottom:22px;
+
+}
+
+
+/* =========================
+   BLUE MOCK TEST BOX
+========================= */
+
+.exam-box{
+
+background:linear-gradient(
+135deg,
+#061b4f 0%,
+#064c9b 50%,
+#087fc1 100%
+);
+
+color:white;
+
+padding:38px 28px 40px;
+
+border-radius:26px;
+
+box-shadow:
+0 8px 25px rgba(0,70,150,.25);
+
+}
+
+
+/* =========================
+   EXAM TITLE
+========================= */
+
+.exam-box h1{
+
+text-align:center;
+
+font-size:30px;
+
+margin-bottom:8px;
+
+}
+
+.intro{
+
+text-align:center;
+
+font-size:16px;
+
+color:#eaf7ff;
+
+margin-bottom:27px;
+
+}
+
+
+/* =========================
+   TEST GRID
+========================= */
+
+.test-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:20px;
+
+}
+
+
+/* =========================
+   TEST CARDS
+========================= */
+
+.test-card{
+
+background:white;
+
+color:#172033;
+
+border-radius:22px;
+
+padding:28px 15px;
+
+min-height:210px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.15);
+
+transition:.2s;
+
+}
+
+.test-card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 9px 22px rgba(0,0,0,.20);
+
+}
+
+.test-card h2{
+
+color:#064c9b;
+
+font-size:22px;
+
+margin-bottom:10px;
+
+}
+
+.test-card p{
+
+font-size:13px;
+
+color:#687386;
+
+margin-bottom:17px;
+
+}
+
+
+/* =========================
+   COMING SOON
+========================= */
+
+.coming{
+
+display:inline-block;
+
+background:#eef2f7;
+
+color:#697386;
+
+padding:8px 17px;
+
+border-radius:24px;
+
+font-size:12px;
+
+font-weight:bold;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+text-align:center;
+
+margin-top:30px;
+
+padding:22px;
+
+font-size:12px;
+
+color:#687386;
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:800px){
+
+.test-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+header{
+
+padding:25px 10px;
+
+}
+
+.logo{
+
+font-size:27px;
+
+}
+
+.tagline{
+
+font-size:13px;
+
+}
+
+nav{
+
+gap:3px;
+
+padding:9px 4px;
+
+}
+
+nav a{
+
+font-size:11px;
+
+padding:7px 8px;
+
+}
+
+.container{
+
+padding:18px 10px 30px;
+
+}
+
+.main-title{
+
+font-size:25px;
+
+margin-bottom:18px;
+
+}
+
+.exam-box{
+
+padding:25px 12px 28px;
+
+border-radius:20px;
+
+}
+
+.exam-box h1{
+
+font-size:22px;
+
+}
+
+.intro{
+
+font-size:13px;
+
+margin-bottom:20px;
+
+}
+
+.test-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:10px;
+
+}
+
+.test-card{
+
+min-height:175px;
+
+padding:18px 7px;
+
+border-radius:17px;
+
+}
+
+.test-card h2{
+
+font-size:17px;
+
+}
+
+.test-card p{
+
+font-size:11px;
+
+margin-bottom:12px;
+
+}
+
+.coming{
+
+font-size:10px;
+
+padding:7px 10px;
+
+}
+
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media(max-width:360px){
+
+.test-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.test-card{
+
+min-height:155px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     WEBSITE HEADER
+========================= -->
+
+<header>
+
+<div class="logo">
+
+🎓 EduCare C.C.
+
+</div>
+
+<div class="tagline">
+
+WBTET • CTET • TET • Teacher Preparation
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+<a href="../">
+
+🏠 Home
+
+</a>
+
+<a href="../#wbtet">
+
+WBTET
+
+</a>
+
+<a href="../#ctet">
+
+CTET
+
+</a>
+
+<a href="../#other-tet">
+
+Other TET
+
+</a>
+
+<a href="../mock-tests/">
+
+🎯 Mock Tests
+
+</a>
+
+<a href="../#updates">
+
+📢 Updates
+
+</a>
+
+</nav>
+
+
+<!-- =========================
+     PAGE CONTENT
+========================= -->
+
+<div class="container">
+
+
+<!-- BACK TO MOCK TESTS -->
+
+<a
+href="../mock-tests/"
+class="back"
+>
+
+← Back to Mock Tests
+
+</a>
+
+
+<!-- MAIN TITLE -->
+
+<h2 class="main-title">
+
+📖 WBTET English Mock Tests
+
+</h2>
+
+
+<!-- =========================
+     ENGLISH MOCK TEST BOX
+========================= -->
+
+<section class="exam-box">
+
+
+<h1>
+
+📝 WBTET English 2026
+
+</h1>
+
+
+<p class="intro">
+
+English Language — Practice Mock Tests
+
+</p>
+
+
+<!-- =========================
+     TEST GRID
+========================= -->
+
+<div class="test-grid">
+
+
+<!-- MOCK TEST 1 -->
+
+<div class="test-card">
+
+<h2>
+📝 MOCK TEST 1
+</h2>
+
+<p>
+WBTET English Practice Test 1
+</p>
+
+<span class="coming">
+Coming Soon
+</span>
+
+</div>
+
+
+<!-- MOCK TEST 2 -->
+
+<div class="test-card">
+
+<h2>
+📝 MOCK TEST 2
+</h2>
+
+<p>
+WBTET English Practice Test 2
+</p>
+
+<span class="coming">
+Coming Soon
+</span>
+
+</div>
+
+
+<!-- MOCK TEST 3 -->
+
+<div class="test-card">
+
+<h2>
+📝 MOCK TEST 3
+</h2>
+
+<p>
+WBTET English Practice Test 3
+</p>
+
+<span class="coming">
+Coming Soon
+</span>
+
+</div>
+
+
+<!-- MOCK TEST 4 -->
+
+<div class="test-card">
+
+<h2>
+📝 MOCK TEST 4
+</h2>
+
+<p>
+WBTET English Practice Test 4
+</p>
+
+<span class="coming">
+Coming Soon
+</span>
+
+</div>
+
+
+<!-- MOCK TEST 5 -->
+
+<div class="test-card">
+
+<h2>
+📝 MOCK TEST 5
+</h2>
+
+<p>
+WBTET English Practice Test 5
+</p>
+
+<span class="coming">
+Coming Soon
+</span>
+
+</div>
+
+
+<!-- MOCK TEST 6 -->
+
+<div class="test-card">
+
+<h2>
+📝 MOCK TEST 6
+</h2>
+
+<p>
+WBTET English Practice Test 6
+</p>
+
+<span class="coming">
+Coming Soon
+</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+© 2026 EduCare C.C.
+
+<br>
+
+WBTET • CTET • TET • English Practice
+
+</footer>
+
+
+</div>
+
+
+</body>
+
+  </html>
