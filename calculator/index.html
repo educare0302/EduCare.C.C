@@ -7,6 +7,7 @@
 <title>WB Teachers Salary Calculator | EduCare C.C.</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -285,6 +286,7 @@ footer {
         font-size: 25px;
     }
 }
+
 </style>
 </head>
 
@@ -293,33 +295,56 @@ footer {
 <!-- ================= HEADER ================= -->
 
 <header>
-    <div class="logo">🎓 EduCare C.C.</div>
+
+    <div class="logo">
+        🎓 EduCare C.C.
+    </div>
+
     <div class="tagline">
         WBTET • CTET • TET • Teacher Preparation
     </div>
+
 </header>
+
 
 <!-- ================= NAVIGATION ================= -->
 
 <nav>
+
     <a href="../">🏠 Home</a>
+
     <a href="../#wbtet">WBTET</a>
+
     <a href="../#ctet">CTET</a>
+
     <a href="../#other-tet">Other TET</a>
+
     <a href="../mock-tests/">🎯 Mock Tests</a>
+
     <a href="../#updates">📢 Updates</a>
+
 </nav>
+
 
 <!-- ================= MAIN CONTENT ================= -->
 
 <div class="container">
 
+
     <div class="page-title">
-        <h1>💰 WB Teachers Salary Calculator</h1>
-        <p>Before October vs October 2026 Salary Calculation</p>
+
+        <h1>
+            💰 WB Teachers Salary Calculator
+        </h1>
+
+        <p>
+            Before October vs October 2026 Salary Calculation
+        </p>
+
     </div>
 
-    <!-- BASIC PAY -->
+
+    <!-- ================= BASIC PAY ================= -->
 
     <div class="basic-box">
 
@@ -340,23 +365,42 @@ footer {
 
     </div>
 
+
     <!-- ================= TWO SECTIONS ================= -->
 
     <div class="salary-sections">
 
-        <!-- BEFORE OCTOBER -->
+
+        <!-- ================= BEFORE OCTOBER ================= -->
 
         <div class="salary-card">
 
-            <h2>📅 Before October</h2>
+            <h2>
+                📅 Before October
+            </h2>
+
 
             <div class="salary-row">
-                <span>Basic Pay</span>
-                <span class="amount" id="basicBefore">₹0</span>
+
+                <span>
+                    Basic Pay
+                </span>
+
+                <span
+                    class="amount"
+                    id="basicBefore">
+                    ₹0
+                </span>
+
             </div>
 
+
             <div class="salary-row">
-                <span>DA (%)</span>
+
+                <span>
+                    DA (%)
+                </span>
+
                 <input
                     class="edit-input"
                     type="number"
@@ -364,15 +408,31 @@ footer {
                     value="18"
                     oninput="calculateSalary()"
                 >
+
             </div>
 
-            <div class="salary-row">
-                <span>DA Amount</span>
-                <span class="amount" id="daBefore">₹0</span>
-            </div>
 
             <div class="salary-row">
-                <span>HRA (%)</span>
+
+                <span>
+                    DA Amount
+                </span>
+
+                <span
+                    class="amount"
+                    id="daBefore">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <div class="salary-row">
+
+                <span>
+                    HRA (%)
+                </span>
+
                 <input
                     class="edit-input"
                     type="number"
@@ -380,15 +440,31 @@ footer {
                     value="12"
                     oninput="calculateSalary()"
                 >
+
             </div>
 
-            <div class="salary-row">
-                <span>HRA Amount</span>
-                <span class="amount" id="hraBefore">₹0</span>
-            </div>
 
             <div class="salary-row">
-                <span>Medical Allowance</span>
+
+                <span>
+                    HRA Amount
+                </span>
+
+                <span
+                    class="amount"
+                    id="hraBefore">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <div class="salary-row">
+
+                <span>
+                    Medical Allowance
+                </span>
+
                 <input
                     class="edit-input"
                     type="number"
@@ -396,15 +472,31 @@ footer {
                     value="500"
                     oninput="calculateSalary()"
                 >
+
             </div>
+
 
             <div class="salary-row gross-row">
-                <span>Gross Salary</span>
-                <span class="amount" id="grossBefore">₹0</span>
+
+                <span>
+                    Gross Salary
+                </span>
+
+                <span
+                    class="amount"
+                    id="grossBefore">
+                    ₹0
+                </span>
+
             </div>
 
+
             <div class="salary-row">
-                <span>PF / GPF (%)</span>
+
+                <span>
+                    PF / GPF (%)
+                </span>
+
                 <input
                     class="edit-input"
                     type="number"
@@ -412,15 +504,33 @@ footer {
                     value="6"
                     oninput="calculateSalary()"
                 >
+
             </div>
 
-            <div class="salary-row">
-                <span>PF / GPF Amount</span>
-                <span class="amount" id="pfBefore">₹0</span>
-            </div>
 
             <div class="salary-row">
-                <span>P. Tax</span>
+
+                <span>
+                    PF / GPF Amount
+                </span>
+
+                <span
+                    class="amount"
+                    id="pfBefore">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <!-- BEFORE OCTOBER PTAX -->
+
+            <div class="salary-row">
+
+                <span>
+                    P. Tax
+                </span>
+
                 <input
                     class="edit-input"
                     type="number"
@@ -428,29 +538,57 @@ footer {
                     value="200"
                     oninput="calculateSalary()"
                 >
+
             </div>
 
+
             <div class="salary-row inhand-row">
-                <span>In-Hand Salary</span>
-                <span class="amount" id="inhandBefore">₹0</span>
+
+                <span>
+                    In-Hand Salary
+                </span>
+
+                <span
+                    class="amount"
+                    id="inhandBefore">
+                    ₹0
+                </span>
+
             </div>
 
         </div>
 
 
-        <!-- OCTOBER 2026 -->
+        <!-- ================= OCTOBER 2026 ================= -->
 
         <div class="salary-card october">
 
-            <h2>📅 October 2026</h2>
+            <h2>
+                📅 October 2026
+            </h2>
+
 
             <div class="salary-row">
-                <span>Basic Pay</span>
-                <span class="amount" id="basicOctober">₹0</span>
+
+                <span>
+                    Basic Pay
+                </span>
+
+                <span
+                    class="amount"
+                    id="basicOctober">
+                    ₹0
+                </span>
+
             </div>
 
+
             <div class="salary-row">
-                <span>DA (%)</span>
+
+                <span>
+                    DA (%)
+                </span>
+
                 <input
                     class="edit-input"
                     type="number"
@@ -458,15 +596,31 @@ footer {
                     value="38"
                     oninput="calculateSalary()"
                 >
+
             </div>
 
-            <div class="salary-row">
-                <span>DA Amount</span>
-                <span class="amount" id="daOctober">₹0</span>
-            </div>
 
             <div class="salary-row">
-                <span>HRA (%)</span>
+
+                <span>
+                    DA Amount
+                </span>
+
+                <span
+                    class="amount"
+                    id="daOctober">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <div class="salary-row">
+
+                <span>
+                    HRA (%)
+                </span>
+
                 <input
                     class="edit-input"
                     type="number"
@@ -474,15 +628,31 @@ footer {
                     value="12"
                     oninput="calculateSalary()"
                 >
+
             </div>
 
-            <div class="salary-row">
-                <span>HRA Amount</span>
-                <span class="amount" id="hraOctober">₹0</span>
-            </div>
 
             <div class="salary-row">
-                <span>Medical Allowance</span>
+
+                <span>
+                    HRA Amount
+                </span>
+
+                <span
+                    class="amount"
+                    id="hraOctober">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <div class="salary-row">
+
+                <span>
+                    Medical Allowance
+                </span>
+
                 <input
                     class="edit-input"
                     type="number"
@@ -490,15 +660,31 @@ footer {
                     value="500"
                     oninput="calculateSalary()"
                 >
+
             </div>
+
 
             <div class="salary-row gross-row">
-                <span>Gross Salary</span>
-                <span class="amount" id="grossOctober">₹0</span>
+
+                <span>
+                    Gross Salary
+                </span>
+
+                <span
+                    class="amount"
+                    id="grossOctober">
+                    ₹0
+                </span>
+
             </div>
 
+
             <div class="salary-row">
-                <span>PF / GPF (%)</span>
+
+                <span>
+                    PF / GPF (%)
+                </span>
+
                 <input
                     class="edit-input"
                     type="number"
@@ -506,27 +692,54 @@ footer {
                     value="6"
                     oninput="calculateSalary()"
                 >
+
             </div>
 
-            <div class="salary-row">
-                <span>PF / GPF Amount</span>
-                <span class="amount" id="pfOctober">₹0</span>
-            </div>
 
             <div class="salary-row">
-                <span>P. Tax</span>
-                <input
-                    class="edit-input"
-                    type="number"
-                    id="ptaxOctober"
-                    value="200"
-                    oninput="calculateSalary()"
-                >
+
+                <span>
+                    PF / GPF Amount
+                </span>
+
+                <span
+                    class="amount"
+                    id="pfOctober">
+                    ₹0
+                </span>
+
             </div>
+
+
+            <!-- AUTOMATIC PROFESSIONAL TAX -->
+
+            <div class="salary-row">
+
+                <span>
+                    P. Tax
+                </span>
+
+                <span
+                    class="amount"
+                    id="ptaxOctober">
+                    ₹0
+                </span>
+
+            </div>
+
 
             <div class="salary-row inhand-row">
-                <span>In-Hand Salary</span>
-                <span class="amount" id="inhandOctober">₹0</span>
+
+                <span>
+                    In-Hand Salary
+                </span>
+
+                <span
+                    class="amount"
+                    id="inhandOctober">
+                    ₹0
+                </span>
+
             </div>
 
         </div>
@@ -534,21 +747,27 @@ footer {
     </div>
 
 
-    <!-- ================= INCREASE ================= -->
+    <!-- ================= SALARY INCREASE ================= -->
 
     <div class="increase-box">
 
-        <h2>📈 Salary Increase</h2>
+        <h2>
+            📈 Salary Increase
+        </h2>
 
         <div>
             October In-Hand Salary − Before October In-Hand Salary
         </div>
 
-        <div class="increase-amount" id="salaryIncrease">
+        <div
+            class="increase-amount"
+            id="salaryIncrease">
             ₹0
         </div>
 
-        <div class="increase-percent" id="salaryIncreasePercent">
+        <div
+            class="increase-percent"
+            id="salaryIncreasePercent">
             0% Increase
         </div>
 
@@ -559,14 +778,27 @@ footer {
 
     <div class="note">
 
-        <strong>📌 Note:</strong><br>
+        <strong>
+            📌 Professional Tax — Effective From 01.10.2026
+        </strong>
 
-        Is calculator mein default calculation ke liye:
-        <strong>Before October DA = 18%</strong> aur
-        <strong>October 2026 DA = 38%</strong> rakha gaya hai.
+        <br><br>
 
-        HRA, Medical Allowance, PF/GPF aur P. Tax ko aap future mein
-        apni requirement ke according edit kar sakte hain.
+        ₹20,000 or less → <strong>Nil</strong><br>
+
+        Above ₹20,000 to ₹30,000 → <strong>₹100/month</strong><br>
+
+        Above ₹30,000 to ₹50,000 → <strong>₹140/month</strong><br>
+
+        Above ₹50,000 to ₹1,00,000 → <strong>₹170/month</strong><br>
+
+        Above ₹1,00,000 → <strong>₹208/month</strong>
+
+        <br><br>
+
+        <strong>Note:</strong>
+        October 2026 P. Tax is automatically calculated according
+        to the applicable monthly salary slab.
 
     </div>
 
@@ -576,13 +808,17 @@ footer {
 <!-- ================= FOOTER ================= -->
 
 <footer>
-    © 2026 EduCare C.C. | WBTET • CTET • TET • Teacher Preparation
+
+    © 2026 EduCare C.C. |
+    WBTET • CTET • TET • Teacher Preparation
+
 </footer>
 
 
 <!-- ================= JAVASCRIPT ================= -->
 
 <script>
+
 
 function formatCurrency(amount) {
 
@@ -591,149 +827,256 @@ function formatCurrency(amount) {
 }
 
 
+
 function calculateSalary() {
 
+
+    /* ================= BASIC PAY ================= */
+
     let basic =
-        parseFloat(document.getElementById("basicPay").value) || 0;
+        parseFloat(
+            document.getElementById("basicPay").value
+        ) || 0;
 
 
-    /* ================= BEFORE OCTOBER ================= */
+
+    /* =================================================
+       BEFORE OCTOBER
+    ================================================= */
+
 
     let daBeforePercent =
-        parseFloat(document.getElementById("daBeforePercent").value) || 0;
+        parseFloat(
+            document.getElementById("daBeforePercent").value
+        ) || 0;
+
 
     let hraBeforePercent =
-        parseFloat(document.getElementById("hraBeforePercent").value) || 0;
+        parseFloat(
+            document.getElementById("hraBeforePercent").value
+        ) || 0;
+
 
     let maBefore =
-        parseFloat(document.getElementById("maBefore").value) || 0;
+        parseFloat(
+            document.getElementById("maBefore").value
+        ) || 0;
+
 
     let pfBeforePercent =
-        parseFloat(document.getElementById("pfBeforePercent").value) || 0;
+        parseFloat(
+            document.getElementById("pfBeforePercent").value
+        ) || 0;
+
 
     let ptaxBefore =
-        parseFloat(document.getElementById("ptaxBefore").value) || 0;
+        parseFloat(
+            document.getElementById("ptaxBefore").value
+        ) || 0;
+
 
 
     let daBefore =
         basic * daBeforePercent / 100;
 
+
     let hraBefore =
         basic * hraBeforePercent / 100;
 
+
     let grossBefore =
-        basic + daBefore + hraBefore + maBefore;
+        basic +
+        daBefore +
+        hraBefore +
+        maBefore;
+
 
     let pfBefore =
         basic * pfBeforePercent / 100;
 
+
     let inhandBefore =
-        grossBefore - pfBefore - ptaxBefore;
+        grossBefore -
+        pfBefore -
+        ptaxBefore;
 
 
-    /* ================= OCTOBER 2026 ================= */
+
+    /* =================================================
+       OCTOBER 2026
+    ================================================= */
+
 
     let daOctoberPercent =
-        parseFloat(document.getElementById("daOctoberPercent").value) || 0;
+        parseFloat(
+            document.getElementById("daOctoberPercent").value
+        ) || 0;
+
 
     let hraOctoberPercent =
-        parseFloat(document.getElementById("hraOctoberPercent").value) || 0;
+        parseFloat(
+            document.getElementById("hraOctoberPercent").value
+        ) || 0;
+
 
     let maOctober =
-        parseFloat(document.getElementById("maOctober").value) || 0;
+        parseFloat(
+            document.getElementById("maOctober").value
+        ) || 0;
+
 
     let pfOctoberPercent =
-        parseFloat(document.getElementById("pfOctoberPercent").value) || 0;
+        parseFloat(
+            document.getElementById("pfOctoberPercent").value
+        ) || 0;
 
-    let ptaxOctober =
-        parseFloat(document.getElementById("ptaxOctober").value) || 0;
 
 
     let daOctober =
         basic * daOctoberPercent / 100;
 
+
     let hraOctober =
         basic * hraOctoberPercent / 100;
 
+
     let grossOctober =
-        basic + daOctober + hraOctober + maOctober;
+        basic +
+        daOctober +
+        hraOctober +
+        maOctober;
+
 
     let pfOctober =
         basic * pfOctoberPercent / 100;
 
+
+
+    /* =================================================
+       PROFESSIONAL TAX
+       EFFECTIVE FROM 01.10.2026
+    ================================================= */
+
+
+    let ptaxOctober = 0;
+
+
+    if (grossOctober <= 20000) {
+
+        ptaxOctober = 0;
+
+    }
+
+    else if (grossOctober <= 30000) {
+
+        ptaxOctober = 100;
+
+    }
+
+    else if (grossOctober <= 50000) {
+
+        ptaxOctober = 140;
+
+    }
+
+    else if (grossOctober <= 100000) {
+
+        ptaxOctober = 170;
+
+    }
+
+    else {
+
+        ptaxOctober = 208;
+
+    }
+
+
+
+    /* =================================================
+       OCTOBER IN-HAND
+    ================================================= */
+
+
     let inhandOctober =
-        grossOctober - pfOctober - ptaxOctober;
+        grossOctober -
+        pfOctober -
+        ptaxOctober;
 
 
-    /* ================= DISPLAY ================= */
+
+    /* =================================================
+       DISPLAY BEFORE OCTOBER
+    ================================================= */
+
 
     document.getElementById("basicBefore").textContent =
         formatCurrency(basic);
 
+
     document.getElementById("daBefore").textContent =
         formatCurrency(daBefore);
+
 
     document.getElementById("hraBefore").textContent =
         formatCurrency(hraBefore);
 
+
     document.getElementById("grossBefore").textContent =
         formatCurrency(grossBefore);
 
+
     document.getElementById("pfBefore").textContent =
         formatCurrency(pfBefore);
+
 
     document.getElementById("inhandBefore").textContent =
         formatCurrency(inhandBefore);
 
 
+
+    /* =================================================
+       DISPLAY OCTOBER
+    ================================================= */
+
+
     document.getElementById("basicOctober").textContent =
         formatCurrency(basic);
+
 
     document.getElementById("daOctober").textContent =
         formatCurrency(daOctober);
 
+
     document.getElementById("hraOctober").textContent =
         formatCurrency(hraOctober);
+
 
     document.getElementById("grossOctober").textContent =
         formatCurrency(grossOctober);
 
+
     document.getElementById("pfOctober").textContent =
         formatCurrency(pfOctober);
+
+
+    document.getElementById("ptaxOctober").textContent =
+        formatCurrency(ptaxOctober);
+
 
     document.getElementById("inhandOctober").textContent =
         formatCurrency(inhandOctober);
 
 
-    /* ================= SALARY INCREASE ================= */
+
+    /* =================================================
+       SALARY INCREASE
+    ================================================= */
+
 
     let increase =
-        inhandOctober - inhandBefore;
+        inhandOctober -
+        inhandBefore;
 
 
-    let increasePercent = 0;
-
-    if (inhandBefore > 0) {
-        increasePercent =
-            (increase / inhandBefore) * 100;
-    }
-
-
-    document.getElementById("salaryIncrease").textContent =
-        formatCurrency(increase);
-
-
-    document.getElementById("salaryIncreasePercent").textContent =
-        increasePercent.toFixed(2) + "% Increase";
-
-}
-
-
-/* Initial Calculation */
-
-calculateSalary();
-
-</script>
-
-</body>
-  </html>
+    let increasePerce
